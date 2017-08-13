@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<!--<link rel="stylesheet" type="text/css" href="" />-->
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-3.3.7/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-awesome/font-awesome-expand.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/jquery-easyui-1.5/themes/bootstrap/easyui.css" />
+<title>Insert title here</title>
+
+<style type="text/css">
+<!--
+
+-->
+#mine-ang .ltgt{
+	color: #8C8000;
+}
+#mine-ang .code-box{
+	background: #E5EECC;
+	border: #D4D4D4 1px solid;
+	padding:20px 5px;
+	height: 200px;
+}
+#mine-ang .code-box>.code,#mine-ang .code-box>.example{
+	background: #fff;
+	border: #D4D4D4 1px solid;
+	border-radius: 4px;
+	min-height: calc(100% - 40px);
+	width:calc(50% - 2px);
+	float: left;
+}
+</style>
+</head>
+<body>
+
+<div id="mine-ang" data-ng-app="mineAng" data-ng-controller="mineAngController">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Angular-表达式
+		</div>
+		<div class="panle-body">
+			<div class="code-box" data-ng-controller="mineAng01">
+				<div class="code">
+					<span class="ltgt">&lt;</span>
+						input type=&quot;text&quot; data-ng-model=&quot;name&quot;
+					<span>/&gt;</span>
+				</div>
+				<div class="example">
+					<button class="btn btn-primary" data-toggle="modal" data-target="#mine-example-modal">查看示例</button>
+				</div>
+			</div>
+			<span class="sub-dep" ></span>
+		</div>
+	</div>
+	<div class="modal fade" id="mine-example-modal" tabindex="-1" role="dialog" aria-labelledby="mine-example-modal-label">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="mine-example-modal-label">Modal title</h4>
+		      </div>
+		      <div class="modal-body">
+		        ...
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+</div>
+</div>
+<script type="text/javascript" src="/viewSources/lib/jquery/jquery-1.12.4.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/bootstrap-3.3.7/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/jquery.easyui.min.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/angular-1.6.3/angular.min.js" ></script>
+<script type="text/javascript">
+<!--
+
+//-->
+$(function() {
+	$().rightMenu();
+});
+(function(w,$j){
+	var mineAng=angular.module("mineAng",[]).controller("mineAngController",function($scope,$timeout){
+		console.info($scope);
+	}).controller("mineAng01",function($scope,$timeout){
+		console.info($scope);
+	});
+}(window,jQuery));
+</script>
+</body>
+</html>
+

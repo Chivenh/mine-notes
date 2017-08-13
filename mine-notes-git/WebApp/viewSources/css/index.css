@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+body{padding-top:60px;}
+@media(max-width:768px){
+#main-navbar-collapse .dropdown a:hover{
+	background:none;
+	background-color:#0C0C0C;
+}
+#main-navbar-collapse .dropdown-menu > li > a:hover,#main-navbar-collapse .dropdown-menu > li > a:focus{
+	color:#efefef;
+	background:none;
+	background-color:#0C0C0C;
+}
+
+}

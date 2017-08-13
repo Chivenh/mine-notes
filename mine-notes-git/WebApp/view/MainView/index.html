@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<!--<link rel="stylesheet" type="text/css" href="" />-->
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-3.3.7/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-awesome/font-awesome-expand.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/jquery-easyui-1.5/themes/bootstrap/easyui.css" />
+<title>Insert title here</title>
+
+<style type="text/css">
+#main-index-view {
+	padding-left: 20px;
+}
+
+#main-index-view .panel-title {
+	width: calc(100%);
+}
+
+#main-index-view a.collpase-item-title {
+	width: 100%;
+}
+
+#main-index-view a.collpase-item-title::hover {
+	text-decoration: none;
+	color: black;
+	font-style: italic;
+}
+
+#main-index-view code {
+	color: #FD5B1E;
+	text-shadow: 0 0 1px #BDB95E;
+	font-style: italic;
+	font-weight: 400;
+}
+
+#main-index-view .simple-example-view {
+	box-shadow: 0 0 0 1px lightblue;
+}
+
+#main-index-view .collpase-item-title {
+	margin-left: 100px;
+}
+
+#example-01-01-01 {
+	background: "transparent";
+	background-color: rgb(162, 217, 253, 0.4);
+	border: none;
+	border-radius: 4px;
+	width: 300px;
+}
+
+#example-01-01-02>#tc-circle {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	background: lightgreen;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	vertical-align: middle;
+	text-align: center;
+	color: darkblue;
+	text-shadow: 0 0 1px lightblue;
+}
+
+#example-01-01-03>#tc-sub-circle {
+	display: inline-block;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	background: lightgreen;
+	border-radius: 50px/25px;
+	-moz-border-radius: 50px/25px;
+	-webkit-border-radius: 50px/25px;
+	vertical-align: middle;
+	text-align: center;
+	color: darkblue;
+	text-shadow: 0 0 1px lightblue;
+}
+</style>
+</head>
+<body style="width:calc(100% - 20px);" >
+<div
+	id="main-index-view"
+	class="contanier-fluid">
+	<div class="row">
+				<div class="  col-sm-6 col-md-6 ">
+						<div class="panel-group" id="main-index-view-index1-accordion" role="tablist" aria-multiselectable="true">
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="main-index-view-index1-headingOne" >
+			      <h4 class="panel-title" >
+			        <a class="collpase-item-title" role="button"  data-toggle="collapse" data-parent="main-index-view-index1-accordion" href="#main-index-view-index1-collapseOne" aria-expanded="true" aria-controls="main-index-view-index1-collapseOne">
+			          Practical CSS
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="main-index-view-index1-collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="main-index-view-index1-headingOne">
+			      <div class="panel-body" style="height: 200px;overflow: auto;">
+			        <span class="text-primary"><span class="badge">1</span></span>
+			        <span class="help-inline text-warning">容器背景透明,内容不透明</span>
+			        <div class="well simple-example-view">
+			        	<code>
+			        			#example-01-01-01{ 
+			        			background:"transparent"; <br/>
+			        			background-color: rgb(162,217,253,0.4); 
+			        			border:none; <br/>
+			        			border-radius: 4px; 
+			        			margin-left: 30px; <br/>
+			        			width:200px;
+			        			}
+			        	</code>
+			        	<div >
+			        		
+			        		<div id="example-01-01-01" style="vertical-align: middle;">
+			        			<span class="text-primary"><span class="badge">Example:</span></span><span style="color: blue;font-weight: 450;margin-left: 20px;"> 背景透明,内容不透明!</span>
+			        		</div>
+			        	</div>
+			        </div>
+			        <span class="badge active">2</span>
+			        <span class="help-inline text-warning">CSS画多边形</span>
+			        <div class="well simple-example-view">
+			        	<div><code>
+			        		#example-01-01-02>#tc-circle{
+					        		display:inline-block;<br/>
+					        		width:50px;
+					        		height:50px;<br/>
+					        		background:lightgreen;
+					        		border-radius:50%;<br/>
+					        		-moz-border-radius: 50%; 
+									-webkit-border-radius: 50%;<br/>
+									vertical-align: middle;
+									text-align: center;<br/>
+									color: green;
+									text-shadow: 0 0 1px blue;
+			        			} 
+			        	</code>
+			        	<div>
+			        		
+			        		<div id="example-01-01-02" >
+			        			<span class="badge">Example:</span><span id="tc-circle">圆形</span>
+			        		</div>
+			        	</div>
+			        	</div>
+			        	<div>
+			        	<code>
+			        	#example-01-01-03>#tc-sub-circle{
+					        		display:inline-block;<br/>
+					        		width:100px;
+					        		height:50px;<br/>
+					        		line-height:50px;
+					        		background:lightgreen;<br/>
+					        		border-radius:50px/25px;
+					        		-moz-border-radius: 50px/25px;<br/>
+									-webkit-border-radius: 50px/25px;
+									vertical-align: middle;<br/>
+									text-align: center;
+									color: darkblue;<br/>
+									text-shadow: 0 0 1px lightblue;
+			        			}
+			        	</code>
+			        	<div>
+			        	
+			        	<div id="example-01-01-03" >
+			        		<span class="badge">Example:</span><span id="tc-sub-circle">椭圆</span>
+			        	</div>
+			        	</div>
+			        	</div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="main-index-view-index1-headingTwo">
+			      <h4 class="panel-title">
+			        <a class="collapsed collpase-item-title" role="button" data-toggle="collapse" data-parent="#main-index-view-index1-accordion" href="#main-index-view-index1-collapseTwo" aria-expanded="false" aria-controls="main-index-view-index1-collapseTwo">
+			          Practical Javascript
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="main-index-view-index1-collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="main-index-view-index1-headingTwo">
+			      <div class="panel-body" style="height: 230px;overflow: auto;">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="main-index-view-index1-headingThree">
+			      <h4 class="panel-title">
+			        <a class="collapsed collpase-item-title" role="button" data-toggle="collapse" data-parent="#main-index-view-index1-accordion" href="#main-index-view-index1-collapseThree" aria-expanded="false" aria-controls="main-index-view-index1-collapseThree">
+			          Special Notes
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="main-index-view-index1-collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="main-index-view-index1-headingThree">
+			      <div class="panel-body" style="height: 230px;overflow: auto;">
+			        <span class="text-primary"><span class="badge">1</span></span>
+			        <span class="help-inline text-warning">Function 之 Arguments的使用</span>
+			        <div class="well simple-example-view">
+			        <code>arguments.callee</code><span>   返回的是当前执行的函数.</span> 
+			        <span class="help-block"></span>
+					<code>Array.prototype.splice.call(arguments);</code>
+					<br/>
+					<span>可以将arguments转换成一个数组对象,可以使用数组的一些方法.</span>
+			        </div>
+			        
+			        <span class="text-primary"><span class="badge">2</span></span>
+			        <span class="help-inline text-warning">HTML5 data 自定义属性注意!</span>
+			        <div class="well simple-example-view">
+			        <span>1).data-* *不能含大写字母.</span>
+			        <br/>
+			        <span>2)<br/>
+			        		&nbsp;I.首先如果在标签中要直接存放对象,需要存放json字符串才行.
+					如:
+					<code>
+						{title:"",field:"menu",width:100,formatter:function(value,row,index){<br/>
+								var rowi=JSON.stringify(row);<br/>
+								//var str = obj.toJSONString(); (同样转成json字符串)<br/>								
+							return "&lt;span class='btn-primary' data-index="+index+" data-row="+rowi+" onclick=\"helpWin.doPHright(event);\"&gt;更多操作&lt;/span&gt;";<br/>
+														}},<br/>
+								在js中取此data-row的值,则只要用$(this).data(row)获取即是对象,不需要再转换.;
+					</code>
+					<br/>
+					<span>
+						&nbsp;II.在Js中用jquery的data()方法写入数据时,可以直接将对象写入,内部会自动处理,取值时也可以直接取来用.
+					***注意事项,在对象中如果有日期值,使用JSON.stringify(arg)转换时会造成转换错误.因为JSON不能存储日期,会将日期转成字符串存储,在之后要转回为JSON对象时需要用new Date(value).将此字符串再转回为日期才能使用.
+						</span>		        </span>
+			        </div>
+			        
+			        <span class="text-primary"><span class="badge">3</span></span>
+					<span class="help-inline text-warning">JS 清除所有cookie函数 </span>
+						<div class="well simple-example-view">
+               		<code>
+	               function clearAllCookie() {<br/>  
+	                    var keys = document.cookie.match(/[^ =;]+(?=\=)/g);  <br/>  
+	                    if(keys) {  <br/>  
+	                        for(var i = keys.length; i--;)  <br/>  
+	                            document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString();  <br/>  
+	                    }  <br/>  
+                	}  
+					</code> 
+						</div>
+			        <span class="text-primary"><span class="badge">4</span></span>
+					<span class="help-inline text-warning">简单JS 原生Ajax 结构</span>
+						<div class="well simple-example-view">
+							<code>
+							var xmlhttp = new XMLHttpRequest();<br/>
+						xmlhttp.onreadystatechange = function() {<br/>
+						    if (this.readyState == 4 && this.status == 200) {<br/>
+						        myObj = JSON.parse(this.responseText);<br/>
+						        document.getElementById("demo").innerHTML = myObj.name;<br/>
+						    }<br/>
+						};<br/>
+						xmlhttp.open("GET", "/try/ajax/json_demo.txt", true);<br/>
+						xmlhttp.send();<br/>
+							</code>
+
+						</div>	
+
+
+			        
+			        </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<div class="panel-group" id="main-index-view-index2-accordion" role="tablist" aria-multiselectable="true">
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="main-index-view-index2-headingOne" >
+			      <h4 class="panel-title" >
+			        <a role="button" class="collpase-item-title" data-toggle="collapse" data-parent="main-index-view-index2-accordion" href="#main-index-view-index2-collapseOne" aria-expanded="true" aria-controls="main-index-view-index2-collapseOne">
+			          Collapsible Group Item #1
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="main-index-view-index2-collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="main-index-view-index2-headingOne">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="main-index-view-index2-headingTwo">
+			      <h4 class="panel-title">
+			        <a class="collapsed collpase-item-title" role="button" data-toggle="collapse" data-parent="#main-index-view-index2-accordion" href="#main-index-view-index2-collapseTwo" aria-expanded="false" aria-controls="main-index-view-index2-collapseTwo">
+			          Collapsible Group Item #2
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="main-index-view-index2-collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="main-index-view-index2-headingTwo">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="main-index-view-index2-headingThree">
+			      <h4 class="panel-title">
+			        <a class="collapsed collpase-item-title" role="button" data-toggle="collapse" data-parent="#main-index-view-index2-accordion" href="#main-index-view-index2-collapseThree" aria-expanded="false" aria-controls="main-index-view-index2-collapseThree">
+			          Collapsible Group Item #3
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="main-index-view-index2-collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="main-index-view-index2-headingThree">
+			      <div class="panel-body">
+			        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/viewSources/lib/jquery/jquery-1.12.4.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/bootstrap-3.3.7/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/jquery.easyui.min.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		$().rightMenu();
+	});
+</script>
+</body>
+</html>
+

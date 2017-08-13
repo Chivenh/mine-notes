@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<!--<link rel="stylesheet" type="text/css" href="" />-->
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-3.3.7/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-awesome/font-awesome-expand.css" />
+<link rel="stylesheet" type="text/css" href="/viewSources/lib/jquery-easyui-1.5/themes/bootstrap/easyui.css" />
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="bootStrap-view"  >
+    <div id="bootStrap-view-icons">
+    	<!-- 此页面为首页,需要添加首页内容在这个页面添加 -->
+<style type="text/css">
+	#bootStrap-view-icons #mainHtml-Test>span>i{width:98px;height:20px; display: block;line-height: 20px;padding-top:2px;}
+	#bootStrap-view-icons #mainHtml-Test>span>i:NTH-OF-TYPE(1){
+	font-size:20px;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+	#bootStrap-view-icons #mainHtml-Test>span>i:NTH-OF-TYPE(2){width:80px;word-wrap:break-word;}
+	#bootStrap-view-icons #mainHtml-Test>span{width:102px;height:102px;display:inline-table;line-height:100px;
+	border: 1px solid lightgray;text-align: center;margin:0 0 0 0;border-collapse: collapse;border-spacing: 0;
+	}
+	#bootStrap-view-icons #mainHtml-Test>span:hover{background: #E6EDF3;}
+	#bootStrap-view-icons #mainHtml-Test>span:hover >i:nth-of-type(2){font-style: normal;}
+	#bootStrap-view-icons #mainHtml-Test{overflow:auto;border-top:1px dashed lightgray;width:99%;height:450px;}
+	#bootStrap-view-icons #mainHtml-Test>h4{text-align: center;}
+	#bootStrap-view-icons #search-glyphicon-awesome+div>ul.dropdown-menu{box-shadow: none;}
+	#bootStrap-view-icons #search-glyphicon-awesome+div>ul.dropdown-menu>li>a{border-top:none;}
+	#bootStrap-view-icons #glyphicon-awesome-total{border:none;width:50px;background: transparent; }
+	#bootStrap-view-icons #glyphicon-awesome-total+span{border: none;background: none;margin: 0;padding:0;width:15px;}
+	
+</style>
+	<div class="form-inline" role="form" style="text-align: center;margin-bottom: 10px;">
+	<div class="input-group" style="min-width: 150px;">
+	<label class="sr-only">.</label>
+	<input type="text" class="form-control" placeholder="输入过滤(移开自动过滤)" id="search-glyphicon-awesome" list="icon-autocomplete-list"/>
+		<div class="input-group-btn" >
+			<i class="awesome awesome-remove btn btn-default remove"></i>
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">导向 <span class="caret"></span></button>
+       	 	<ul class="dropdown-menu" style="top:32px;border-radius:4px; ">
+          	<li><a  data-href="#href-glyphicon-forward" class="href-icon-forward " href="javascript:;">Glyphicon图标</a></li>
+          	<li><a data-href="#href-awesome-forward" class="href-icon-forward" href="javascript:;">Awesome图标</a></li>
+<!--          	<li><a data-href="#href-minedefine-forward" class="href-icon-forward btn btn-default" href="javascript:;">自定义图标</a></li>-->
+         	 </ul>
+		</div>
+	</div>
+	<div class="input-group" style="width:50px;">
+	<label class="sr-only">.</label>
+	<input type="text" class="form-control" readonly="readonly" draggable="false"  value="" id="glyphicon-awesome-total"/>
+	<span class="input-group-addon">个</span>
+	</div>
+	<datalist id="icon-autocomplete-list">
+		<option value="glyphicon">
+		<option value="awesome">
+		<!-- <option value="mineicon"> -->
+	</datalist>
+	</div>
+<div id="mainHtml-Test" >
+<h4 id="href-glyphicon-forward">Glyphicon字体图标</h4>
+<span><i class="glyphicon glyphicon-th-large"></i><i>.glyphicon-th-large</i></span>  
+<!-- (\<i class="glyphicon glyphicon-.*"\>)(.glyphicon-.*)(\<\/i\>) -->
+<!-- \<span\>$1$3$2\<\/span\> -->
+<span><i class="glyphicon glyphicon-th"></i><i>.glyphicon-th</i></span> 
+<span><i class="glyphicon glyphicon-th-list"></i><i>.glyphicon-th-list</i></span> 
+<span><i class="glyphicon glyphicon-ok"></i><i>.glyphicon-ok</i></span>  
+
+<span><i class="glyphicon glyphicon-remove"></i><i>.glyphicon-remove</i></span> 
+
+<span><i class="glyphicon glyphicon-zoom-in"></i><i>.glyphicon-zoom-in</i></span> 
+
+<span><i class="glyphicon glyphicon-zoom-out"></i><i>.glyphicon-zoom-out</i></span> 
+
+<span><i class="glyphicon glyphicon-off"></i><i>.glyphicon-off</i></span> 
+
+<span><i class="glyphicon glyphicon-signal"></i><i>.glyphicon-signal</i></span> 
+
+<span><i class="glyphicon glyphicon-cog"></i><i>.glyphicon-cog</i></span> 
+
+<span><i class="glyphicon glyphicon-trash"></i><i>.glyphicon-trash</i></span> 
+
+<span><i class="glyphicon glyphicon-home"></i><i>.glyphicon-home</i></span> 
+
+<span><i class="glyphicon glyphicon-file"></i><i>.glyphicon-file</i></span> 
+<span><i class="glyphicon glyphicon-time"></i><i>.glyphicon-time</i></span> 
+
+<span><i class="glyphicon glyphicon-road"></i><i>.glyphicon-road</i></span> 
+
+<span><i class="glyphicon glyphicon-download-alt"></i><i>.glyphicon-download-alt</i></span> 
+
+<span><i class="glyphicon glyphicon-download"></i><i>.glyphicon-download</i></span> 
+
+<span><i class="glyphicon glyphicon-upload"></i><i>.glyphicon-upload</i></span> 
+
+<span><i class="glyphicon glyphicon-inbox"></i><i>.glyphicon-inbox</i></span> 
+
+<span><i class="glyphicon glyphicon-play-circle"></i><i>.glyphicon-play-circle</i></span> 
+
+<span><i class="glyphicon glyphicon-repeat"></i><i>.glyphicon-repeat</i></span> 
+
+<span><i class="glyphicon glyphicon-refresh"></i><i>.glyphicon-refresh</i></span> 
+
+<span><i class="glyphicon glyphicon-list-alt"></i><i>.glyphicon-list-alt</i></span> 
+
+<span><i class="glyphicon glyphicon-lock"></i><i>.glyphicon-lock</i></span> 
+
+<span><i class="glyphicon glyphicon-flag"></i><i>.glyphicon-flag</i></span> 
+
+<span><i class="glyphicon glyphicon-headphones"></i><i>.glyphicon-headphones</i></span> 
+
+<span><i class="glyphicon glyphicon-volume-off"></i><i>.glyphicon-volume-off</i></span> 
+
+<span><i class="glyphicon glyphicon-volume-down"></i><i>.glyphicon-volume-down</i></span> 
+
+<span><i class="glyphicon glyphicon-volume-up"></i><i>.glyphicon-volume-up</i></span> 
+
+<span><i class="glyphicon glyphicon-qrcode"></i><i>.glyphicon-qrcode</i></span> 
+
+<span><i class="glyphicon glyphicon-barcode"></i><i>.glyphicon-barcode</i></span> 
+
+<span><i class="glyphicon glyphicon-tag"></i><i>.glyphicon-tag</i></span> 
+
+<span><i class="glyphicon glyphicon-tags"></i><i>.glyphicon-tags</i></span> 
+
+<span><i class="glyphicon glyphicon-book"></i><i>.glyphicon-book</i></span> 
+
+<span><i class="glyphicon glyphicon-bookmark"></i><i>.glyphicon-bookmark</i></span> 
+
+<span><i class="glyphicon glyphicon-print"></i><i>.glyphicon-print</i></span> 
+
+<span><i class="glyphicon glyphicon-camera"></i><i>.glyphicon-camera</i></span> 
+
+<span><i class="glyphicon glyphicon-font"></i><i>.glyphicon-font</i></span> 
+
+<span><i class="glyphicon glyphicon-bold"></i><i>.glyphicon-bold</i></span> 
+
+<span><i class="glyphicon glyphicon-italic"></i><i>.glyphicon-italic</i></span> 
+
+<span><i class="glyphicon glyphicon-text-height"></i><i>.glyphicon-text-height</i></span> 
+
+<span><i class="glyphicon glyphicon-text-width"></i><i>.glyphicon-text-width</i></span> 
+
+<span><i class="glyphicon glyphicon-align-left"></i><i>.glyphicon-align-left</i></span> 
+
+<span><i class="glyphicon glyphicon-align-center"></i><i>.glyphicon-align-center</i></span> 
+
+<span><i class="glyphicon glyphicon-align-right"></i><i>.glyphicon-align-right</i></span> 
+
+<span><i class="glyphicon glyphicon-align-justify"></i><i>.glyphicon-align-justify</i></span> 
+
+<span><i class="glyphicon glyphicon-list"></i><i>.glyphicon-list</i></span> 
+
+<span><i class="glyphicon glyphicon-indent-left"></i><i>.glyphicon-indent-left</i></span> 
+
+<span><i class="glyphicon glyphicon-indent-right"></i><i>.glyphicon-indent-right</i></span> 
+
+<span><i class="glyphicon glyphicon-facetime-video"></i><i>.glyphicon-facetime-video</i></span> 
+
+<span><i class="glyphicon glyphicon-picture"></i><i>.glyphicon-picture</i></span> 
+
+<span><i class="glyphicon glyphicon-map-marker"></i><i>.glyphicon-map-marker</i></span> 
+
+<span><i class="glyphicon glyphicon-adjust"></i><i>.glyphicon-adjust</i></span> 
+
+<span><i class="glyphicon glyphicon-tint "></i><i>.glyphicon-tint</i> </span>
+
+<span><i class="glyphicon glyphicon-edit "></i><i>.glyphicon-edit</i> </span>
+
+<span><i class="glyphicon glyphicon-share"></i><i>.glyphicon-share</i></span> 
+
+<span><i class="glyphicon glyphicon-check"></i><i>.glyphicon-check</i></span> 
+
+<span><i class="glyphicon glyphicon-move"></i><i>.glyphicon-move</i></span> 
+
+<span><i class="glyphicon glyphicon-step-backward"></i><i>.glyphicon-step-backward</i></span> 
+
+<span><i class="glyphicon glyphicon-fast-backward"></i><i>.glyphicon-fast-backward</i></span> 
+
+<span><i class="glyphicon glyphicon-backward"></i><i>.glyphicon-backward</i></span> 
+
+<span><i class="glyphicon glyphicon-play"></i><i>.glyphicon-play</i></span> 
+
+<span><i class="glyphicon glyphicon-pause"></i><i>.glyphicon-pause</i></span> 
+
+<span><i class="glyphicon glyphicon-stop"></i><i>.glyphicon-stop</i></span> 
+
+<span><i class="glyphicon glyphicon-forward"></i><i>.glyphicon-forward</i></span> 
+
+<span><i class="glyphicon glyphicon-fast-forward"></i><i>.glyphicon-fast-forward</i></span> 
+
+<span><i class="glyphicon glyphicon-step-forward"></i><i>.glyphicon-step-forward</i></span> 
+
+<span><i class="glyphicon glyphicon-eject"></i><i>.glyphicon-eject</i></span> 
+
+<span><i class="glyphicon glyphicon-chevron-left"></i><i>.glyphicon-chevron-left</i></span> 
+
+<span><i class="glyphicon glyphicon-chevron-right"></i><i>.glyphicon-chevron-right</i></span> 
+
+<span><i class="glyphicon glyphicon-plus-sign"></i><i>.glyphicon-plus-sign</i></span> 
+
+<span><i class="glyphicon glyphicon-minus-sign"></i><i>.glyphicon-minus-sign</i></span> 
+<span><i class="glyphicon glyphicon-remove-sign"></i><i>.glyphicon-remove-sign</i></span> 
+<span><i class="glyphicon glyphicon-ok-sign"></i><i>.glyphicon-ok-sign</i></span> 
+
+<span><i class="glyphicon glyphicon-question-sign"></i><i>.glyphicon-question-sign</i></span> 
+
+<span><i class="glyphicon glyphicon-info-sign"></i><i>.glyphicon-info-sign</i></span> 
+
+<span><i class="glyphicon glyphicon-screenshot"></i><i>.glyphicon-screenshot</i></span> 
+
+<span><i class="glyphicon glyphicon-remove-circle"></i><i>.glyphicon-remove-circle</i></span> 
+
+<span><i class="glyphicon glyphicon-ok-circle"></i><i>.glyphicon-ok-circle</i></span> 
+
+<span><i class="glyphicon glyphicon-ban-circle"></i><i>.glyphicon-ban-circle</i></span> 
+
+<span><i class="glyphicon glyphicon-arrow-left"></i><i>.glyphicon-arrow-left</i></span> 
+
+<span><i class="glyphicon glyphicon-arrow-right"></i><i>.glyphicon-arrow-right</i></span> 
+
+<span><i class="glyphicon glyphicon-arrow-up"></i><i>.glyphicon-arrow-up</i></span> 
+
+<span><i class="glyphicon glyphicon-arrow-down"></i><i>.glyphicon-arrow-down</i></span> 
+
+<span><i class="glyphicon glyphicon-share-alt"></i><i>.glyphicon-share-alt</i></span> 
+
+<span><i class="glyphicon glyphicon-resize-full"></i><i>.glyphicon-resize-full</i></span> 
+
+<span><i class="glyphicon glyphicon-resize-small"></i><i>.glyphicon-resize-small</i></span> 
+
+<span><i class="glyphicon glyphicon-exclamation-sign"></i><i>.glyphicon-exclamation-sign</i></span> 
+
+<span><i class="glyphicon glyphicon-gift"></i><i>.glyphicon-gift</i></span> 
+
+<span><i class="glyphicon glyphicon-leaf"></i><i>.glyphicon-leaf</i></span> 
+
+<span><i class="glyphicon glyphicon-fire"></i><i>.glyphicon-fire</i></span> 
+
+<span><i class="glyphicon glyphicon-eye-open"></i><i>.glyphicon-eye-open</i></span> 
+
+<span><i class="glyphicon glyphicon-eye-close"></i><i>.glyphicon-eye-close</i></span> 
+
+<span><i class="glyphicon glyphicon-warning-sign"></i><i>.glyphicon-warning-sign</i></span> 
+
+<span><i class="glyphicon glyphicon-plane"></i><i>.glyphicon-plane</i></span> 
+
+<span><i class="glyphicon glyphicon-calendar"></i><i>.glyphicon-calendar</i></span> 
+
+<span><i class="glyphicon glyphicon-random"></i><i>.glyphicon-random</i></span> 
+
+<span><i class="glyphicon glyphicon-comment"></i><i>.glyphicon-comment</i></span> 
+
+<span><i class="glyphicon glyphicon-magnet"></i><i>.glyphicon-magnet</i></span> 
+
+<span><i class="glyphicon glyphicon-chevron-up"></i><i>.glyphicon-chevron-up</i></span> 
+
+<span><i class="glyphicon glyphicon-chevron-down"></i><i>.glyphicon-chevron-down</i></span> 
+
+<span><i class="glyphicon glyphicon-retweet"></i><i>.glyphicon-retweet</i></span> 
+
+<span><i class="glyphicon glyphicon-shopping-cart"></i><i>.glyphicon-shopping-cart</i></span> 
+
+<span><i class="glyphicon glyphicon-folder-close"></i><i>.glyphicon-folder-close</i></span> 
+
+<span><i class="glyphicon glyphicon-folder-open"></i><i>.glyphicon-folder-open</i></span> 
+
+<span><i class="glyphicon glyphicon-resize-vertical"></i><i>.glyphicon-resize-vertical</i></span> 
+
+<span><i class="glyphicon glyphicon-resize-horizontal"></i><i>.glyphicon-resize-horizontal</i></span> 
+
+<span><i class="glyphicon glyphicon-hdd"></i><i>.glyphicon-hdd</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-bullhorn"></i><i>.glyphicon-bullhorn</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-bell"></i><i>.glyphicon-bell</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-certificate"></i><i>.glyphicon-certificate</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-thumbs-up"></i><i>.glyphicon-thumbs-up</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-thumbs-down"></i><i>.glyphicon-thumbs-down</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-hand-right"></i><i>.glyphicon-hand-right</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-hand-left"></i><i>.glyphicon-hand-left</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-hand-up"></i><i>.glyphicon-hand-up</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-hand-down"></i><i>.glyphicon-hand-down</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-circle-arrow-right"></i><i>.glyphicon-circle-arrow-right</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-circle-arrow-left"></i><i>.glyphicon-circle-arrow-left</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-circle-arrow-up"></i><i>.glyphicon-circle-arrow-up</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-circle-arrow-down"></i><i>.glyphicon-circle-arrow-down</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-globe"></i><i>.glyphicon-globe</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-wrench"></i><i>.glyphicon-wrench</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-tasks"></i><i>.glyphicon-tasks</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-filter"></i><i>.glyphicon-filter</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-briefcase"></i><i>.glyphicon-briefcase</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-fullscreen"></i><i>.glyphicon-fullscreen</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-dashboard"></i><i>.glyphicon-dashboard</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-paperclip"></i><i>.glyphicon-paperclip</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-heart-empty"></i><i>.glyphicon-heart-empty</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-link"></i><i>.glyphicon-link</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-phone"></i><i>.glyphicon-phone</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-pushpin"></i><i>.glyphicon-pushpin</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-usd"></i><i>.glyphicon-usd</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-gbp"></i><i>.glyphicon-gbp</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-sort"></i><i>.glyphicon-sort</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-sort-by-alphabet"></i><i>.glyphicon-sort-by-alphabet</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i><i>.glyphicon-sort-by-alphabet-alt</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-sort-by-order"></i><i>.glyphicon-sort-by-order</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-sort-by-order-alt"></i><i>.glyphicon-sort-by-order-alt</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-sort-by-attributes"></i><i>.glyphicon-sort-by-attributes</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-sort-by-attributes-alt"></i><i>.glyphicon-sort-by-attributes-alt</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-unchecked"></i><i>.glyphicon-unchecked</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-expand"></i><i>.glyphicon-expand</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-collapse-down"></i><i>.glyphicon-collapse-down</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-collapse-up"></i><i>.glyphicon-collapse-up</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-log-in"></i><i>.glyphicon-log-in</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-flash"></i><i>.glyphicon-flash</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-log-out"></i><i>.glyphicon-log-out</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-new-window"></i><i>.glyphicon-new-window</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-record"></i><i>.glyphicon-record</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-save"></i><i>.glyphicon-save</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-open"></i><i>.glyphicon-open</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-saved"></i><i>.glyphicon-saved</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-import"></i><i>.glyphicon-import</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-export"></i><i>.glyphicon-export</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-send"></i><i>.glyphicon-send</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-floppy-disk"></i><i>.glyphicon-floppy-disk</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-floppy-saved"></i><i>.glyphicon-floppy-saved</i></span> 
+   
+
+<span><i class="glyphicon glyphicon-floppy-remove"></i><i>.glyphicon-floppy-remove</i></span> 
+
+<span><i class="glyphicon glyphicon-floppy-save"></i><i>.glyphicon-floppy-save</i></span> 
+
+<span><i class="glyphicon glyphicon-floppy-open"></i><i>.glyphicon-floppy-open</i></span> 
+
+<span><i class="glyphicon glyphicon-credit-card"></i><i>.glyphicon-credit-card</i></span> 
+
+<span><i class="glyphicon glyphicon-transfer"></i><i>.glyphicon-transfer</i></span> 
+
+<span><i class="glyphicon glyphicon-cutlery"></i><i>.glyphicon-cutlery</i></span> 
+
+<span><i class="glyphicon glyphicon-header"></i><i>.glyphicon-header</i></span> 
+
+<span><i class="glyphicon glyphicon-compressed"></i><i>.glyphicon-compressed</i></span> 
+
+<span><i class="glyphicon glyphicon-earphone"></i><i>.glyphicon-earphone</i></span> 
+
+<span><i class="glyphicon glyphicon-phone-alt"></i><i>.glyphicon-phone-alt</i></span> 
+
+<span><i class="glyphicon glyphicon-tower"></i><i>.glyphicon-tower</i></span> 
+
+<span><i class="glyphicon glyphicon-stats"></i><i>.glyphicon-stats</i></span> 
+
+<span><i class="glyphicon glyphicon-sd-video"></i><i>.glyphicon-sd-video</i></span> 
+
+<span><i class="glyphicon glyphicon-hd-video"></i><i>.glyphicon-hd-video</i></span> 
+
+<span><i class="glyphicon glyphicon-subtitles"></i><i>.glyphicon-subtitles</i></span> 
+
+<span><i class="glyphicon glyphicon-sound-stereo"></i><i>.glyphicon-sound-stereo</i></span> 
+
+<span><i class="glyphicon glyphicon-sound-dolby"></i><i>.glyphicon-sound-dolby</i></span> 
+
+<span><i class="glyphicon glyphicon-sound-5-1"></i><i>.glyphicon-sound-5-1</i></span> 
+
+<span><i class="glyphicon glyphicon-sound-6-1"></i><i>.glyphicon-sound-6-1</i></span> 
+
+<span><i class="glyphicon glyphicon-sound-7-1"></i><i>.glyphicon-sound-7-1</i></span> 
+
+<span><i class="glyphicon glyphicon-copyright-mark"></i><i>.glyphicon-copyright-mark</i></span> 
+
+<span><i class="glyphicon glyphicon-registration-mark"></i><i>.glyphicon-registration-mark</i></span> 
+
+<span><i class="glyphicon glyphicon-cloud-download"></i><i>.glyphicon-cloud-download</i></span> 
+
+<span><i class="glyphicon glyphicon-cloud-upload"></i><i>.glyphicon-cloud-upload</i></span> 
+
+<span><i class="glyphicon glyphicon-tree-conifer"></i><i>.glyphicon-tree-conifer</i></span> 
+
+<span><i class="glyphicon glyphicon-tree-deciduous"></i><i>.glyphicon-tree-deciduous</i></span> 
+
+<span><i class="glyphicon glyphicon-cd"></i><i>.glyphicon-cd</i></span> 
+
+<span><i class="glyphicon glyphicon-save-file"></i><i>.glyphicon-save-file</i></span> 
+
+<span><i class="glyphicon glyphicon-open-file"></i><i>.glyphicon-open-file</i></span> 
+
+<span><i class="glyphicon glyphicon-level-up"></i><i>.glyphicon-level-up</i></span>  
+
+<span><i class="glyphicon glyphicon-copy"></i><i>.glyphicon-copy</i></span> 
+
+<span><i class="glyphicon glyphicon-paste"></i><i>.glyphicon-paste</i></span> 
+
+<span><i class="glyphicon glyphicon-alert"></i><i>.glyphicon-alert</i></span> 
+
+<span><i class="glyphicon glyphicon-equalizer"></i><i>.glyphicon-equalizer</i></span> 
+
+<span><i class="glyphicon glyphicon-king"></i><i>.glyphicon-king</i></span> 
+
+<span><i class="glyphicon glyphicon-queen"></i><i>.glyphicon-queen</i></span> 
+
+<span><i class="glyphicon glyphicon-pawn"></i><i>.glyphicon-pawn</i></span> 
+
+<span><i class="glyphicon glyphicon-bishop"></i><i>.glyphicon-bishop</i></span> 
+
+<span><i class="glyphicon glyphicon-knight"></i><i>.glyphicon-knight</i></span> 
+
+<span><i class="glyphicon glyphicon-baby-formula"></i><i>.glyphicon-baby-formula</i></span> 
+
+<span><i class="glyphicon glyphicon-tent"></i><i>.glyphicon-tent</i></span> 
+
+<span><i class="glyphicon glyphicon-blackboard"></i><i>.glyphicon-blackboard</i></span> 
+
+<span><i class="glyphicon glyphicon-bed"></i><i>.glyphicon-bed</i></span> 
+
+<span><i class="glyphicon glyphicon-apple"></i><i>.glyphicon-apple</i></span> 
+
+<span><i class="glyphicon glyphicon-erase"></i><i>.glyphicon-erase</i></span> 
+
+<span><i class="glyphicon glyphicon-hourglass"></i><i>.glyphicon-hourglass</i></span> 
+
+<span><i class="glyphicon glyphicon-lamp"></i><i>.glyphicon-lamp</i></span> 
+
+<span><i class="glyphicon glyphicon-duplicate"></i><i>.glyphicon-duplicate</i></span> 
+
+<span><i class="glyphicon glyphicon-piggy-bank"></i><i>.glyphicon-piggy-bank</i></span> 
+
+<span><i class="glyphicon glyphicon-scissors"></i><i>.glyphicon-scissors</i></span> 
+<span><i class="glyphicon glyphicon-bitcoin"></i><i>.glyphicon-bitcoin</i></span> 
+
+<span><i class="glyphicon glyphicon-btc"></i><i>.glyphicon-btc</i></span> 
+
+<span><i class="glyphicon glyphicon-xbt"></i><i>.glyphicon-xbt</i></span> 
+
+<span><i class="glyphicon glyphicon-yen"></i><i>.glyphicon-yen</i></span> 
+
+<span><i class="glyphicon glyphicon-jpy"></i><i>.glyphicon-jpy</i></span> 
+
+<span><i class="glyphicon glyphicon-ruble"></i><i>.glyphicon-ruble</i></span> 
+
+<span><i class="glyphicon glyphicon-rub"></i><i>.glyphicon-rub</i></span> 
+
+<span><i class="glyphicon glyphicon-scale"></i><i>.glyphicon-scale</i></span> 
+
+<span><i class="glyphicon glyphicon-ice-lolly"></i><i>.glyphicon-ice-lolly</i></span> 
+
+<span><i class="glyphicon glyphicon-ice-lolly-tasted"></i><i>.glyphicon-ice-lolly-tasted</i></span> 
+
+<span><i class="glyphicon glyphicon-education"></i><i>.glyphicon-education</i></span> 
+
+<span><i class="glyphicon glyphicon-option-horizontal"></i><i>.glyphicon-option-horizontal</i></span> 
+
+<span><i class="glyphicon glyphicon-option-vertical"></i><i>.glyphicon-option-vertical</i></span> 
+
+<span><i class="glyphicon glyphicon-menu-hamburger"></i><i>.glyphicon-menu-hamburger</i></span> 
+
+<span><i class="glyphicon glyphicon-modal-window"></i><i>.glyphicon-modal-window</i></span> 
+
+<span><i class="glyphicon glyphicon-oil"></i><i>.glyphicon-oil</i></span> 
+
+<span><i class="glyphicon glyphicon-grain"></i><i>.glyphicon-grain</i></span> 
+
+<span><i class="glyphicon glyphicon-sunglasses"></i><i>.glyphicon-sunglasses</i></span> 
+
+<span><i class="glyphicon glyphicon-text-size"></i><i>.glyphicon-text-size</i></span> 
+
+<span><i class="glyphicon glyphicon-text-color"></i><i>.glyphicon-text-color</i></span> 
+
+<span><i class="glyphicon glyphicon-text-background"></i><i>.glyphicon-text-background</i></span> 
+
+<span><i class="glyphicon glyphicon-object-align-top"></i><i>.glyphicon-object-align-top</i></span> 
+
+<span><i class="glyphicon glyphicon-object-align-bottom"></i><i>.glyphicon-object-align-bottom</i></span> 
+
+<span><i class="glyphicon glyphicon-object-align-horizontal"></i><i>.glyphicon-object-align-horizontal</i></span> 
+
+<span><i class="glyphicon glyphicon-object-align-left"></i><i>.glyphicon-object-align-left</i></span> 
+
+<span><i class="glyphicon glyphicon-object-align-vertical"></i><i>.glyphicon-object-align-vertical</i></span> 
+
+<span><i class="glyphicon glyphicon-object-align-right"></i><i>.glyphicon-object-align-right</i></span> 
+
+<span><i class="glyphicon glyphicon-triangle-right"></i><i>.glyphicon-triangle-right</i></span> 
+
+<span><i class="glyphicon glyphicon-triangle-left"></i><i>.glyphicon-triangle-left</i></span> 
+
+<span><i class="glyphicon glyphicon-triangle-bottom"></i><i>.glyphicon-triangle-bottom</i></span> 
+
+<span><i class="glyphicon glyphicon-triangle-top"></i><i>.glyphicon-triangle-top</i></span> 
+
+<span><i class="glyphicon glyphicon-console"></i><i>.glyphicon-console</i></span> 
+
+<span><i class="glyphicon glyphicon-superscript"></i><i>.glyphicon-superscript</i></span> 
+
+<span><i class="glyphicon glyphicon-subscript"></i><i>.glyphicon-subscript</i></span> 
+
+<span><i class="glyphicon glyphicon-menu-left"></i><i>.glyphicon-menu-left</i></span> 
+
+<span><i class="glyphicon glyphicon-menu-right"></i><i>.glyphicon-menu-right</i></span> 
+
+<span><i class="glyphicon glyphicon-menu-down"></i><i>.glyphicon-menu-down</i></span> 
+
+<span><i class="glyphicon glyphicon-menu-up"></i><i>.glyphicon-menu-up</i></span> 
+<h4 id="href-awesome-forward">Bootstrap-Awesome字体图标</h4>
+<h6><span class="help-block text-center">/static/lib/bootstrap-awesome/font-awesome-expand.css</span></h6>
+<span><i class="awesome awesome-glass "></i><i>.awesome-glass </i></span>
+  
+ 
+<span><i class="awesome awesome-music "></i><i>.awesome-music </i></span>
+  
+ 
+<span><i class="awesome awesome-search "></i><i>.awesome-search </i></span>
+  
+ 
+<span><i class="awesome awesome-envelope-alt "></i><i>.awesome-envelope-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-heart "></i><i>.awesome-heart </i></span>
+  
+ 
+<span><i class="awesome awesome-star "></i><i>.awesome-star </i></span>
+  
+ 
+<span><i class="awesome awesome-star-empty "></i><i>.awesome-star-empty </i></span>
+  
+ 
+<span><i class="awesome awesome-user "></i><i>.awesome-user </i></span>
+  
+ 
+<span><i class="awesome awesome-film "></i><i>.awesome-film </i></span>
+  
+ 
+<span><i class="awesome awesome-th-large "></i><i>.awesome-th-large </i></span>
+  
+ 
+<span><i class="awesome awesome-th "></i><i>.awesome-th </i></span>
+  
+ 
+<span><i class="awesome awesome-th-list "></i><i>.awesome-th-list </i></span>
+  
+ 
+<span><i class="awesome awesome-ok "></i><i>.awesome-ok </i></span>
+  
+ 
+<span><i class="awesome awesome-remove "></i><i>.awesome-remove </i></span>
+  
+ 
+<span><i class="awesome awesome-zoom-in "></i><i>.awesome-zoom-in </i></span>
+  
+ 
+<span><i class="awesome awesome-zoom-out "></i><i>.awesome-zoom-out </i></span>
+  
+ 
+<span><i class="awesome awesome-power-off"></i><i>.awesome-power-off</i></span>
+<span><i class="awesome awesome-off "></i><i>.awesome-off </i></span>
+  
+ 
+<span><i class="awesome awesome-signal "></i><i>.awesome-signal </i></span>
+  
+ 
+<span><i class="awesome awesome-gear"></i><i>.awesome-gear</i></span>
+<span><i class="awesome awesome-cog "></i><i>.awesome-cog </i></span>
+<span><i class="awesome awesome-cog-circle "></i><i>.awesome-cog-circle </i></span>  
+ 
+<span><i class="awesome awesome-trash "></i><i>.awesome-trash </i></span>
+  
+ 
+<span><i class="awesome awesome-home "></i><i>.awesome-home </i></span>
+  
+ 
+<span><i class="awesome awesome-file-alt "></i><i>.awesome-file-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-time "></i><i>.awesome-time </i></span>
+  
+ 
+<span><i class="awesome awesome-road "></i><i>.awesome-road </i></span>
+  
+ 
+<span><i class="awesome awesome-download-alt "></i><i>.awesome-download-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-download "></i><i>.awesome-download </i></span>
+  
+ 
+<span><i class="awesome awesome-upload "></i><i>.awesome-upload </i></span>
+  
+ 
+<span><i class="awesome awesome-inbox "></i><i>.awesome-inbox </i></span>
+  
+ 
+<span><i class="awesome awesome-play-circle "></i><i>.awesome-play-circle </i></span>
+  
+ 
+<span><i class="awesome awesome-rotate-right"></i><i>.awesome-rotate-right</i></span>
+<span><i class="awesome awesome-repeat "></i><i>.awesome-repeat </i></span>
+  
+ 
+<span><i class="awesome awesome-refresh "></i><i>.awesome-refresh </i></span>
+  
+ 
+<span><i class="awesome awesome-list-alt "></i><i>.awesome-list-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-lock "></i><i>.awesome-lock </i></span>
+  
+ 
+<span><i class="awesome awesome-flag "></i><i>.awesome-flag </i></span>
+  
+ 
+<span><i class="awesome awesome-headphones "></i><i>.awesome-headphones </i></span>
+  
+ 
+<span><i class="awesome awesome-volume-off "></i><i>.awesome-volume-off </i></span>
+  
+ 
+<span><i class="awesome awesome-volume-down "></i><i>.awesome-volume-down </i></span>
+  
+ 
+<span><i class="awesome awesome-volume-up "></i><i>.awesome-volume-up </i></span>
+  
+ 
+<span><i class="awesome awesome-qrcode "></i><i>.awesome-qrcode </i></span>
+  
+ 
+<span><i class="awesome awesome-barcode "></i><i>.awesome-barcode </i></span>
+  
+ 
+<span><i class="awesome awesome-tag "></i><i>.awesome-tag </i></span>
+  
+ 
+<span><i class="awesome awesome-tags "></i><i>.awesome-tags </i></span>
+  
+ 
+<span><i class="awesome awesome-book "></i><i>.awesome-book </i></span>
+  
+ 
+<span><i class="awesome awesome-bookmark "></i><i>.awesome-bookmark </i></span>
+  
+ 
+<span><i class="awesome awesome-print "></i><i>.awesome-print </i></span>
+  
+ 
+<span><i class="awesome awesome-camera "></i><i>.awesome-camera </i></span>
+  
+ 
+<span><i class="awesome awesome-font "></i><i>.awesome-font </i></span>
+  
+ 
+<span><i class="awesome awesome-bold "></i><i>.awesome-bold </i></span>
+  
+ 
+<span><i class="awesome awesome-italic "></i><i>.awesome-italic </i></span>
+  
+ 
+<span><i class="awesome awesome-text-height "></i><i>.awesome-text-height </i></span>
+  
+ 
+<span><i class="awesome awesome-text-width "></i><i>.awesome-text-width </i></span>
+  
+ 
+<span><i class="awesome awesome-align-left "></i><i>.awesome-align-left </i></span>
+  
+ 
+<span><i class="awesome awesome-align-center "></i><i>.awesome-align-center </i></span>
+  
+ 
+<span><i class="awesome awesome-align-right "></i><i>.awesome-align-right </i></span>
+  
+ 
+<span><i class="awesome awesome-align-justify "></i><i>.awesome-align-justify </i></span>
+  
+ 
+<span><i class="awesome awesome-list "></i><i>.awesome-list </i></span>
+  
+ 
+<span><i class="awesome awesome-indent-left "></i><i>.awesome-indent-left </i></span>
+  
+ 
+<span><i class="awesome awesome-indent-right "></i><i>.awesome-indent-right </i></span>
+  
+ 
+<span><i class="awesome awesome-facetime-video "></i><i>.awesome-facetime-video </i></span>
+  
+ 
+<span><i class="awesome awesome-picture "></i><i>.awesome-picture </i></span>
+  
+ 
+<span><i class="awesome awesome-pencil "></i><i>.awesome-pencil </i></span>
+  
+ 
+<span><i class="awesome awesome-map-marker "></i><i>.awesome-map-marker </i></span>
+  
+ 
+<span><i class="awesome awesome-adjust "></i><i>.awesome-adjust </i></span>
+  
+ 
+<span><i class="awesome awesome-tint "></i><i>.awesome-tint </i></span>
+  
+ 
+<span><i class="awesome awesome-edit "></i><i>.awesome-edit </i></span>
+  
+ 
+<span><i class="awesome awesome-share "></i><i>.awesome-share </i></span>
+  
+ 
+<span><i class="awesome awesome-check "></i><i>.awesome-check </i></span>
+  
+ 
+<span><i class="awesome awesome-move "></i><i>.awesome-move </i></span>
+  
+ 
+<span><i class="awesome awesome-step-backward "></i><i>.awesome-step-backward </i></span>
+  
+ 
+<span><i class="awesome awesome-fast-backward "></i><i>.awesome-fast-backward </i></span>
+  
+ 
+<span><i class="awesome awesome-backward "></i><i>.awesome-backward </i></span>
+  
+ 
+<span><i class="awesome awesome-play "></i><i>.awesome-play </i></span>
+  
+ 
+<span><i class="awesome awesome-pause "></i><i>.awesome-pause </i></span>
+  
+ 
+<span><i class="awesome awesome-stop "></i><i>.awesome-stop </i></span>
+  
+ 
+<span><i class="awesome awesome-forward "></i><i>.awesome-forward </i></span>
+  
+ 
+<span><i class="awesome awesome-fast-forward "></i><i>.awesome-fast-forward </i></span>
+  
+ 
+<span><i class="awesome awesome-step-forward "></i><i>.awesome-step-forward </i></span>
+  
+ 
+<span><i class="awesome awesome-eject "></i><i>.awesome-eject </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-left "></i><i>.awesome-chevron-left </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-right "></i><i>.awesome-chevron-right </i></span>
+  
+ 
+<span><i class="awesome awesome-plus-sign "></i><i>.awesome-plus-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-minus-sign "></i><i>.awesome-minus-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-remove-sign "></i><i>.awesome-remove-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-ok-sign "></i><i>.awesome-ok-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-question-sign "></i><i>.awesome-question-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-info-sign "></i><i>.awesome-info-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-screenshot "></i><i>.awesome-screenshot </i></span>
+  
+ 
+<span><i class="awesome awesome-remove-circle "></i><i>.awesome-remove-circle </i></span>
+  
+ 
+<span><i class="awesome awesome-ok-circle "></i><i>.awesome-ok-circle </i></span>
+  
+ 
+<span><i class="awesome awesome-ban-circle "></i><i>.awesome-ban-circle </i></span>
+  
+ 
+<span><i class="awesome awesome-arrow-left "></i><i>.awesome-arrow-left </i></span>
+  
+ 
+<span><i class="awesome awesome-arrow-right "></i><i>.awesome-arrow-right </i></span>
+  
+ 
+<span><i class="awesome awesome-arrow-up "></i><i>.awesome-arrow-up </i></span>
+  
+ 
+<span><i class="awesome awesome-arrow-down "></i><i>.awesome-arrow-down </i></span>
+  
+ 
+<span><i class="awesome awesome-mail-forward"></i><i>.awesome-mail-forward</i></span>
+<span><i class="awesome awesome-share-alt "></i><i>.awesome-share-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-resize-full "></i><i>.awesome-resize-full </i></span>
+  
+ 
+<span><i class="awesome awesome-resize-small "></i><i>.awesome-resize-small </i></span>
+  
+ 
+<span><i class="awesome awesome-plus "></i><i>.awesome-plus </i></span>
+  
+ 
+<span><i class="awesome awesome-minus "></i><i>.awesome-minus </i></span>
+  
+ 
+<span><i class="awesome awesome-asterisk "></i><i>.awesome-asterisk </i></span>
+  
+ 
+<span><i class="awesome awesome-exclamation-sign "></i><i>.awesome-exclamation-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-gift "></i><i>.awesome-gift </i></span>
+  
+ 
+<span><i class="awesome awesome-leaf "></i><i>.awesome-leaf </i></span>
+  
+ 
+<span><i class="awesome awesome-fire "></i><i>.awesome-fire </i></span>
+  
+ 
+<span><i class="awesome awesome-eye-open "></i><i>.awesome-eye-open </i></span>
+  
+ 
+<span><i class="awesome awesome-eye-close "></i><i>.awesome-eye-close </i></span>
+  
+ 
+<span><i class="awesome awesome-warning-sign "></i><i>.awesome-warning-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-plane "></i><i>.awesome-plane </i></span>
+  
+ 
+<span><i class="awesome awesome-calendar "></i><i>.awesome-calendar </i></span>
+  
+ 
+<span><i class="awesome awesome-random "></i><i>.awesome-random </i></span>
+  
+ 
+<span><i class="awesome awesome-comment "></i><i>.awesome-comment </i></span>
+  
+ 
+<span><i class="awesome awesome-magnet "></i><i>.awesome-magnet </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-up "></i><i>.awesome-chevron-up </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-down "></i><i>.awesome-chevron-down </i></span>
+  
+ 
+<span><i class="awesome awesome-retweet "></i><i>.awesome-retweet </i></span>
+  
+ 
+<span><i class="awesome awesome-shopping-cart "></i><i>.awesome-shopping-cart </i></span>
+  
+ 
+<span><i class="awesome awesome-folder-close "></i><i>.awesome-folder-close </i></span>
+  
+ 
+<span><i class="awesome awesome-folder-open "></i><i>.awesome-folder-open </i></span>
+  
+ 
+<span><i class="awesome awesome-resize-vertical "></i><i>.awesome-resize-vertical </i></span>
+  
+ 
+<span><i class="awesome awesome-resize-horizontal "></i><i>.awesome-resize-horizontal </i></span>
+  
+ 
+<span><i class="awesome awesome-bar-chart "></i><i>.awesome-bar-chart </i></span>
+  
+ 
+<span><i class="awesome awesome-twitter-sign "></i><i>.awesome-twitter-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-facebook-sign "></i><i>.awesome-facebook-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-camera-retro "></i><i>.awesome-camera-retro </i></span>
+  
+ 
+<span><i class="awesome awesome-key "></i><i>.awesome-key </i></span>
+  
+ 
+<span><i class="awesome awesome-gears"></i><i>.awesome-gears</i></span>
+<span><i class="awesome awesome-cogs "></i><i>.awesome-cogs </i></span>
+ 
+<span><i class="awesome awesome-comments "></i><i>.awesome-comments </i></span>
+  
+ 
+<span><i class="awesome awesome-thumbs-up-alt "></i><i>.awesome-thumbs-up-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-thumbs-down-alt "></i><i>.awesome-thumbs-down-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-star-half "></i><i>.awesome-star-half </i></span>
+  
+ 
+<span><i class="awesome awesome-heart-empty "></i><i>.awesome-heart-empty </i></span>
+  
+ 
+<span><i class="awesome awesome-signout "></i><i>.awesome-signout </i></span>
+  
+ 
+<span><i class="awesome awesome-linkedin-sign "></i><i>.awesome-linkedin-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-pushpin "></i><i>.awesome-pushpin </i></span>
+  
+ 
+<span><i class="awesome awesome-external-link "></i><i>.awesome-external-link </i></span>
+  
+ 
+<span><i class="awesome awesome-signin "></i><i>.awesome-signin </i></span>
+  
+ 
+<span><i class="awesome awesome-trophy "></i><i>.awesome-trophy </i></span>
+  
+ 
+<span><i class="awesome awesome-github-sign "></i><i>.awesome-github-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-upload-alt "></i><i>.awesome-upload-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-lemon "></i><i>.awesome-lemon </i></span>
+  
+ 
+<span><i class="awesome awesome-phone "></i><i>.awesome-phone </i></span>
+  
+ 
+<span><i class="awesome awesome-unchecked"></i><i>.awesome-unchecked</i></span>
+<span><i class="awesome awesome-check-empty "></i><i>.awesome-check-empty </i></span>
+  
+ 
+<span><i class="awesome awesome-bookmark-empty "></i><i>.awesome-bookmark-empty </i></span>
+  
+ 
+<span><i class="awesome awesome-phone-sign "></i><i>.awesome-phone-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-twitter "></i><i>.awesome-twitter </i></span>
+  
+ 
+<span><i class="awesome awesome-facebook "></i><i>.awesome-facebook </i></span>
+  
+ 
+<span><i class="awesome awesome-github "></i><i>.awesome-github </i></span>
+  
+ 
+<span><i class="awesome awesome-unlock "></i><i>.awesome-unlock </i></span>
+  
+ 
+<span><i class="awesome awesome-credit-card "></i><i>.awesome-credit-card </i></span>
+  
+ 
+<span><i class="awesome awesome-rss "></i><i>.awesome-rss </i></span>
+  
+ 
+<span><i class="awesome awesome-hdd "></i><i>.awesome-hdd </i></span>
+  
+ 
+<span><i class="awesome awesome-bullhorn "></i><i>.awesome-bullhorn </i></span>
+  
+ 
+<span><i class="awesome awesome-bell "></i><i>.awesome-bell </i></span>
+  
+ 
+<span><i class="awesome awesome-certificate "></i><i>.awesome-certificate </i></span>
+  
+ 
+<span><i class="awesome awesome-hand-right "></i><i>.awesome-hand-right </i></span>
+  
+ 
+<span><i class="awesome awesome-hand-left "></i><i>.awesome-hand-left </i></span>
+  
+ 
+<span><i class="awesome awesome-hand-up "></i><i>.awesome-hand-up </i></span>
+  
+ 
+<span><i class="awesome awesome-hand-down "></i><i>.awesome-hand-down </i></span>
+  
+ 
+<span><i class="awesome awesome-circle-arrow-left "></i><i>.awesome-circle-arrow-left </i></span>
+  
+ 
+<span><i class="awesome awesome-circle-arrow-right "></i><i>.awesome-circle-arrow-right </i></span>
+  
+ 
+<span><i class="awesome awesome-circle-arrow-up "></i><i>.awesome-circle-arrow-up </i></span>
+  
+ 
+<span><i class="awesome awesome-circle-arrow-down "></i><i>.awesome-circle-arrow-down </i></span>
+  
+ 
+<span><i class="awesome awesome-globe "></i><i>.awesome-globe </i></span>
+  
+ 
+<span><i class="awesome awesome-wrench "></i><i>.awesome-wrench </i></span>
+  
+ 
+<span><i class="awesome awesome-tasks "></i><i>.awesome-tasks </i></span>
+  
+ 
+<span><i class="awesome awesome-filter "></i><i>.awesome-filter </i></span>
+  
+ 
+<span><i class="awesome awesome-briefcase "></i><i>.awesome-briefcase </i></span>
+  
+ 
+<span><i class="awesome awesome-fullscreen "></i><i>.awesome-fullscreen </i></span>
+  
+ 
+<span><i class="awesome awesome-group "></i><i>.awesome-group </i></span>
+  
+ 
+<span><i class="awesome awesome-link "></i><i>.awesome-link </i></span>
+  
+ 
+<span><i class="awesome awesome-cloud "></i><i>.awesome-cloud </i></span>
+  
+ 
+<span><i class="awesome awesome-beaker "></i><i>.awesome-beaker </i></span>
+  
+ 
+<span><i class="awesome awesome-cut "></i><i>.awesome-cut </i></span>
+  
+ 
+<span><i class="awesome awesome-copy "></i><i>.awesome-copy </i></span>
+  
+ 
+<span><i class="awesome awesome-paperclip"></i><i>.awesome-paperclip</i></span>
+<span><i class="awesome awesome-paper-clip "></i><i>.awesome-paper-clip </i></span>
+  
+ 
+<span><i class="awesome awesome-save "></i><i>.awesome-save </i></span>
+  
+ 
+<span><i class="awesome awesome-sign-blank "></i><i>.awesome-sign-blank </i></span>
+  
+ 
+<span><i class="awesome awesome-reorder "></i><i>.awesome-reorder </i></span>
+  
+ 
+<span><i class="awesome awesome-list-ul "></i><i>.awesome-list-ul </i></span>
+  
+ 
+<span><i class="awesome awesome-list-ol "></i><i>.awesome-list-ol </i></span>
+  
+ 
+<span><i class="awesome awesome-strikethrough "></i><i>.awesome-strikethrough </i></span>
+  
+ 
+<span><i class="awesome awesome-underline "></i><i>.awesome-underline </i></span>
+  
+ 
+<span><i class="awesome awesome-table "></i><i>.awesome-table </i></span>
+  
+ 
+<span><i class="awesome awesome-magic "></i><i>.awesome-magic </i></span>
+  
+ 
+<span><i class="awesome awesome-truck "></i><i>.awesome-truck </i></span>
+  
+ 
+<span><i class="awesome awesome-pinterest "></i><i>.awesome-pinterest </i></span>
+  
+ 
+<span><i class="awesome awesome-pinterest-sign "></i><i>.awesome-pinterest-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-google-plus-sign "></i><i>.awesome-google-plus-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-google-plus "></i><i>.awesome-google-plus </i></span>
+  
+ 
+<span><i class="awesome awesome-money "></i><i>.awesome-money </i></span>
+  
+ 
+<span><i class="awesome awesome-caret-down "></i><i>.awesome-caret-down </i></span>
+  
+ 
+<span><i class="awesome awesome-caret-up "></i><i>.awesome-caret-up </i></span>
+  
+ 
+<span><i class="awesome awesome-caret-left "></i><i>.awesome-caret-left </i></span>
+  
+ 
+<span><i class="awesome awesome-caret-right "></i><i>.awesome-caret-right </i></span>
+  
+ 
+<span><i class="awesome awesome-columns "></i><i>.awesome-columns </i></span>
+  
+ 
+<span><i class="awesome awesome-sort "></i><i>.awesome-sort </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-down "></i><i>.awesome-sort-down </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-up "></i><i>.awesome-sort-up </i></span>
+  
+ 
+<span><i class="awesome awesome-envelope "></i><i>.awesome-envelope </i></span>
+  
+ 
+<span><i class="awesome awesome-linkedin "></i><i>.awesome-linkedin </i></span>
+  
+ 
+<span><i class="awesome awesome-rotate-left"></i><i>.awesome-rotate-left</i></span>
+<span><i class="awesome awesome-undo "></i><i>.awesome-undo </i></span>
+  
+ 
+<span><i class="awesome awesome-legal "></i><i>.awesome-legal </i></span>
+  
+ 
+<span><i class="awesome awesome-dashboard "></i><i>.awesome-dashboard </i></span>
+  
+ 
+<span><i class="awesome awesome-comment-alt "></i><i>.awesome-comment-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-comments-alt "></i><i>.awesome-comments-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-bolt "></i><i>.awesome-bolt </i></span>
+  
+ 
+<span><i class="awesome awesome-sitemap "></i><i>.awesome-sitemap </i></span>
+  
+ 
+<span><i class="awesome awesome-umbrella "></i><i>.awesome-umbrella </i></span>
+  
+ 
+<span><i class="awesome awesome-paste "></i><i>.awesome-paste </i></span>
+  
+ 
+<span><i class="awesome awesome-lightbulb "></i><i>.awesome-lightbulb </i></span>
+  
+ 
+<span><i class="awesome awesome-exchange "></i><i>.awesome-exchange </i></span>
+  
+ 
+<span><i class="awesome awesome-cloud-download "></i><i>.awesome-cloud-download </i></span>
+  
+ 
+<span><i class="awesome awesome-cloud-upload "></i><i>.awesome-cloud-upload </i></span>
+  
+ 
+<span><i class="awesome awesome-user-md "></i><i>.awesome-user-md </i></span>
+  
+ 
+<span><i class="awesome awesome-stethoscope "></i><i>.awesome-stethoscope </i></span>
+  
+ 
+<span><i class="awesome awesome-suitcase "></i><i>.awesome-suitcase </i></span>
+  
+ 
+<span><i class="awesome awesome-bell-alt "></i><i>.awesome-bell-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-coffee "></i><i>.awesome-coffee </i></span>
+  
+ 
+<span><i class="awesome awesome-food "></i><i>.awesome-food </i></span>
+  
+ 
+<span><i class="awesome awesome-file-text-alt "></i><i>.awesome-file-text-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-building "></i><i>.awesome-building </i></span>
+  
+ 
+<span><i class="awesome awesome-hospital "></i><i>.awesome-hospital </i></span>
+  
+ 
+<span><i class="awesome awesome-ambulance "></i><i>.awesome-ambulance </i></span>
+  
+ 
+<span><i class="awesome awesome-medkit "></i><i>.awesome-medkit </i></span>
+  
+ 
+<span><i class="awesome awesome-fighter-jet "></i><i>.awesome-fighter-jet </i></span>
+  
+ 
+<span><i class="awesome awesome-beer "></i><i>.awesome-beer </i></span>
+  
+ 
+<span><i class="awesome awesome-h-sign "></i><i>.awesome-h-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-plus-sign-alt "></i><i>.awesome-plus-sign-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-double-angle-left "></i><i>.awesome-double-angle-left </i></span>
+  
+ 
+<span><i class="awesome awesome-double-angle-right "></i><i>.awesome-double-angle-right </i></span>
+  
+ 
+<span><i class="awesome awesome-double-angle-up "></i><i>.awesome-double-angle-up </i></span>
+  
+ 
+<span><i class="awesome awesome-double-angle-down "></i><i>.awesome-double-angle-down </i></span>
+  
+ 
+<span><i class="awesome awesome-angle-left "></i><i>.awesome-angle-left </i></span>
+  
+ 
+<span><i class="awesome awesome-angle-right "></i><i>.awesome-angle-right </i></span>
+  
+ 
+<span><i class="awesome awesome-angle-up "></i><i>.awesome-angle-up </i></span>
+  
+ 
+<span><i class="awesome awesome-angle-down "></i><i>.awesome-angle-down </i></span>
+  
+ 
+<span><i class="awesome awesome-desktop "></i><i>.awesome-desktop </i></span>
+  
+ 
+<span><i class="awesome awesome-laptop "></i><i>.awesome-laptop </i></span>
+  
+ 
+<span><i class="awesome awesome-tablet "></i><i>.awesome-tablet </i></span>
+  
+ 
+<span><i class="awesome awesome-mobile-phone "></i><i>.awesome-mobile-phone </i></span>
+  
+ 
+<span><i class="awesome awesome-circle-blank "></i><i>.awesome-circle-blank </i></span>
+  
+ 
+<span><i class="awesome awesome-quote-left "></i><i>.awesome-quote-left </i></span>
+  
+ 
+<span><i class="awesome awesome-quote-right "></i><i>.awesome-quote-right </i></span>
+  
+ 
+<span><i class="awesome awesome-spinner "></i><i>.awesome-spinner </i></span>
+<span><i class="awesome awesome-spinner-circle "></i><i>.awesome-spinner-circle </i></span>
+  
+ 
+<span><i class="awesome awesome-circle "></i><i>.awesome-circle </i></span>
+  
+ 
+<span><i class="awesome awesome-mail-reply"></i><i>.awesome-mail-reply</i></span>
+<span><i class="awesome awesome-reply "></i><i>.awesome-reply </i></span>
+  
+ 
+<span><i class="awesome awesome-github-alt "></i><i>.awesome-github-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-folder-close-alt "></i><i>.awesome-folder-close-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-folder-open-alt "></i><i>.awesome-folder-open-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-expand-alt "></i><i>.awesome-expand-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-collapse-alt "></i><i>.awesome-collapse-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-smile "></i><i>.awesome-smile </i></span>
+  
+ 
+<span><i class="awesome awesome-frown "></i><i>.awesome-frown </i></span>
+  
+ 
+<span><i class="awesome awesome-meh "></i><i>.awesome-meh </i></span>
+  
+ 
+<span><i class="awesome awesome-gamepad "></i><i>.awesome-gamepad </i></span>
+  
+ 
+<span><i class="awesome awesome-keyboard "></i><i>.awesome-keyboard </i></span>
+  
+ 
+<span><i class="awesome awesome-flag-alt "></i><i>.awesome-flag-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-flag-checkered "></i><i>.awesome-flag-checkered </i></span>
+  
+ 
+<span><i class="awesome awesome-terminal "></i><i>.awesome-terminal </i></span>
+  
+ 
+<span><i class="awesome awesome-code "></i><i>.awesome-code </i></span>
+  
+ 
+<span><i class="awesome awesome-reply-all "></i><i>.awesome-reply-all </i></span>
+  
+ 
+<span><i class="awesome awesome-mail-reply-all "></i><i>.awesome-mail-reply-all </i></span>
+  
+ 
+<span><i class="awesome awesome-star-half-full"></i><i>.awesome-star-half-full</i></span>
+<span><i class="awesome awesome-star-half-empty "></i><i>.awesome-star-half-empty </i></span>
+  
+ 
+<span><i class="awesome awesome-location-arrow "></i><i>.awesome-location-arrow </i></span>
+  
+ 
+<span><i class="awesome awesome-crop "></i><i>.awesome-crop </i></span>
+  
+ 
+<span><i class="awesome awesome-code-fork "></i><i>.awesome-code-fork </i></span>
+  
+ 
+<span><i class="awesome awesome-unlink "></i><i>.awesome-unlink </i></span>
+  
+ 
+<span><i class="awesome awesome-question "></i><i>.awesome-question </i></span>
+  
+ 
+<span><i class="awesome awesome-info "></i><i>.awesome-info </i></span>
+  
+ 
+<span><i class="awesome awesome-exclamation "></i><i>.awesome-exclamation </i></span>
+  
+ 
+<span><i class="awesome awesome-superscript "></i><i>.awesome-superscript </i></span>
+  
+ 
+<span><i class="awesome awesome-subscript "></i><i>.awesome-subscript </i></span>
+  
+ 
+<span><i class="awesome awesome-eraser "></i><i>.awesome-eraser </i></span>
+  
+ 
+<span><i class="awesome awesome-puzzle-piece "></i><i>.awesome-puzzle-piece </i></span>
+  
+ 
+<span><i class="awesome awesome-microphone "></i><i>.awesome-microphone </i></span>
+  
+ 
+<span><i class="awesome awesome-microphone-off "></i><i>.awesome-microphone-off </i></span>
+  
+ 
+<span><i class="awesome awesome-shield "></i><i>.awesome-shield </i></span>
+  
+ 
+<span><i class="awesome awesome-calendar-empty "></i><i>.awesome-calendar-empty </i></span>
+  
+ 
+<span><i class="awesome awesome-fire-extinguisher "></i><i>.awesome-fire-extinguisher </i></span>
+  
+ 
+<span><i class="awesome awesome-rocket "></i><i>.awesome-rocket </i></span>
+  
+ 
+<span><i class="awesome awesome-maxcdn "></i><i>.awesome-maxcdn </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-sign-left "></i><i>.awesome-chevron-sign-left </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-sign-right "></i><i>.awesome-chevron-sign-right </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-sign-up "></i><i>.awesome-chevron-sign-up </i></span>
+  
+ 
+<span><i class="awesome awesome-chevron-sign-down "></i><i>.awesome-chevron-sign-down </i></span>
+  
+ 
+<span><i class="awesome awesome-html5 "></i><i>.awesome-html5 </i></span>
+  
+ 
+<span><i class="awesome awesome-css3 "></i><i>.awesome-css3 </i></span>
+  
+ 
+<span><i class="awesome awesome-anchor "></i><i>.awesome-anchor </i></span>
+  
+ 
+<span><i class="awesome awesome-unlock-alt "></i><i>.awesome-unlock-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-bullseye "></i><i>.awesome-bullseye </i></span>
+  
+ 
+<span><i class="awesome awesome-ellipsis-horizontal "></i><i>.awesome-ellipsis-horizontal </i></span>
+  
+ 
+<span><i class="awesome awesome-ellipsis-vertical "></i><i>.awesome-ellipsis-vertical </i></span>
+  
+ 
+<span><i class="awesome awesome-rss-sign "></i><i>.awesome-rss-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-play-sign "></i><i>.awesome-play-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-ticket "></i><i>.awesome-ticket </i></span>
+  
+ 
+<span><i class="awesome awesome-minus-sign-alt "></i><i>.awesome-minus-sign-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-check-minus "></i><i>.awesome-check-minus </i></span>
+  
+ 
+<span><i class="awesome awesome-level-up "></i><i>.awesome-level-up </i></span>
+  
+ 
+<span><i class="awesome awesome-level-down "></i><i>.awesome-level-down </i></span>
+  
+ 
+<span><i class="awesome awesome-check-sign "></i><i>.awesome-check-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-edit-sign "></i><i>.awesome-edit-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-external-link-sign "></i><i>.awesome-external-link-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-share-sign "></i><i>.awesome-share-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-compass "></i><i>.awesome-compass </i></span>
+  
+ 
+<span><i class="awesome awesome-collapse "></i><i>.awesome-collapse </i></span>
+  
+ 
+<span><i class="awesome awesome-collapse-top "></i><i>.awesome-collapse-top </i></span>
+  
+ 
+<span><i class="awesome awesome-expand "></i><i>.awesome-expand </i></span>
+  
+ 
+<span><i class="awesome awesome-euro"></i><i>.awesome-euro</i></span>
+<span><i class="awesome awesome-eur "></i><i>.awesome-eur </i></span>
+  
+ 
+<span><i class="awesome awesome-gbp "></i><i>.awesome-gbp </i></span>
+  
+ 
+<span><i class="awesome awesome-dollar"></i><i>.awesome-dollar</i></span>
+<span><i class="awesome awesome-usd "></i><i>.awesome-usd </i></span>
+  
+ 
+<span><i class="awesome awesome-rupee"></i><i>.awesome-rupee</i></span>
+<span><i class="awesome awesome-inr "></i><i>.awesome-inr </i></span>
+  
+ 
+<span><i class="awesome awesome-yen"></i><i>.awesome-yen</i></span>
+<span><i class="awesome awesome-jpy "></i><i>.awesome-jpy </i></span>
+  
+ 
+<span><i class="awesome awesome-renminbi"></i><i>.awesome-renminbi</i></span>
+<span><i class="awesome awesome-cny "></i><i>.awesome-cny </i></span>
+  
+ 
+<span><i class="awesome awesome-won"></i><i>.awesome-won</i></span>
+<span><i class="awesome awesome-krw "></i><i>.awesome-krw </i></span>
+  
+ 
+<span><i class="awesome awesome-bitcoin"></i><i>.awesome-bitcoin</i></span>
+<span><i class="awesome awesome-btc "></i><i>.awesome-btc </i></span>
+  
+ 
+<span><i class="awesome awesome-file "></i><i>.awesome-file </i></span>
+  
+ 
+<span><i class="awesome awesome-file-text "></i><i>.awesome-file-text </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-by-alphabet "></i><i>.awesome-sort-by-alphabet </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-by-alphabet-alt "></i><i>.awesome-sort-by-alphabet-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-by-attributes "></i><i>.awesome-sort-by-attributes </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-by-attributes-alt "></i><i>.awesome-sort-by-attributes-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-by-order "></i><i>.awesome-sort-by-order </i></span>
+  
+ 
+<span><i class="awesome awesome-sort-by-order-alt "></i><i>.awesome-sort-by-order-alt </i></span>
+  
+ 
+<span><i class="awesome awesome-thumbs-up "></i><i>.awesome-thumbs-up </i></span>
+  
+ 
+<span><i class="awesome awesome-thumbs-down "></i><i>.awesome-thumbs-down </i></span>
+  
+ 
+<span><i class="awesome awesome-youtube-sign "></i><i>.awesome-youtube-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-youtube "></i><i>.awesome-youtube </i></span>
+  
+ 
+<span><i class="awesome awesome-xing "></i><i>.awesome-xing </i></span>
+  
+ 
+<span><i class="awesome awesome-xing-sign "></i><i>.awesome-xing-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-youtube-play "></i><i>.awesome-youtube-play </i></span>
+  
+ 
+<span><i class="awesome awesome-dropbox "></i><i>.awesome-dropbox </i></span>
+  
+ 
+<span><i class="awesome awesome-stackexchange "></i><i>.awesome-stackexchange </i></span>
+  
+ 
+<span><i class="awesome awesome-instagram "></i><i>.awesome-instagram </i></span>
+  
+ 
+<span><i class="awesome awesome-flickr "></i><i>.awesome-flickr </i></span>
+  
+ 
+<span><i class="awesome awesome-adn "></i><i>.awesome-adn </i></span>
+  
+ 
+<span><i class="awesome awesome-bitbucket "></i><i>.awesome-bitbucket </i></span>
+  
+ 
+<span><i class="awesome awesome-bitbucket-sign "></i><i>.awesome-bitbucket-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-tumblr "></i><i>.awesome-tumblr </i></span>
+  
+ 
+<span><i class="awesome awesome-tumblr-sign "></i><i>.awesome-tumblr-sign </i></span>
+  
+ 
+<span><i class="awesome awesome-long-arrow-down "></i><i>.awesome-long-arrow-down </i></span>
+  
+ 
+<span><i class="awesome awesome-long-arrow-up "></i><i>.awesome-long-arrow-up </i></span>
+  
+ 
+<span><i class="awesome awesome-long-arrow-left "></i><i>.awesome-long-arrow-left </i></span>
+  
+ 
+<span><i class="awesome awesome-long-arrow-right "></i><i>.awesome-long-arrow-right </i></span>
+  
+ 
+<span><i class="awesome awesome-apple "></i><i>.awesome-apple </i></span>
+  
+ 
+<span><i class="awesome awesome-windows "></i><i>.awesome-windows </i></span>
+  
+ 
+<span><i class="awesome awesome-android "></i><i>.awesome-android </i></span>
+  
+ 
+<span><i class="awesome awesome-linux "></i><i>.awesome-linux </i></span>
+  
+ 
+<span><i class="awesome awesome-dribbble "></i><i>.awesome-dribbble </i></span>
+  
+ 
+<span><i class="awesome awesome-skype "></i><i>.awesome-skype </i></span>
+  
+ 
+<span><i class="awesome awesome-foursquare "></i><i>.awesome-foursquare </i></span>
+  
+ 
+<span><i class="awesome awesome-trello "></i><i>.awesome-trello </i></span>
+  
+ 
+<span><i class="awesome awesome-female "></i><i>.awesome-female </i></span>
+  
+ 
+<span><i class="awesome awesome-male "></i><i>.awesome-male </i></span>
+  
+ 
+<span><i class="awesome awesome-gittip "></i><i>.awesome-gittip </i></span>
+  
+ 
+<span><i class="awesome awesome-sun "></i><i>.awesome-sun </i></span>
+  
+ 
+<span><i class="awesome awesome-moon "></i><i>.awesome-moon </i></span>
+  
+ 
+<span><i class="awesome awesome-archive "></i><i>.awesome-archive </i></span>
+  
+ 
+<span><i class="awesome awesome-bug "></i><i>.awesome-bug </i></span>
+  
+ 
+<span><i class="awesome awesome-vk "></i><i>.awesome-vk </i></span>
+  
+ 
+<span><i class="awesome awesome-weibo "></i><i>.awesome-weibo </i></span>
+  
+ 
+<span><i class="awesome awesome-renren "></i><i>.awesome-renren </i></span>
+ 
+</div>
+<!--
+^((\<i>.glyphicon-).*\b)</i> 查找
+
+\<i class="glyphicon $1"\>$1\<\/i\> 替换
+-->
+<script type="text/javascript">
+	
+	setTimeout(function(){
+		eventInitForIcon();
+	},1);
+	/*
+	*	导向方法
+	**/
+	function eventInitForIcon(){
+		var iconList=$(">span","#mainHtml-Test");
+		$("#glyphicon-awesome-total").val(iconList.length).focus(function(e){
+			$(this).blur();
+		});
+		var toggleShowIcon=function(){
+			var _this=this;
+			iconList.each(function(){
+				var b=($(this).find("i:first").attr("class").indexOf($(_this).val()))>-1;
+				b||$(this).addClass("hidden");
+				b&&$(this).removeClass("hidden");
+			});
+			var iconListHidden=$(">span.hidden","#mainHtml-Test");
+			$("#glyphicon-awesome-total").val(iconList.length-iconListHidden.length||0);
+		}
+		var $search=$("#search-glyphicon-awesome");
+		$search.change(toggleShowIcon).next("div").find(">i.remove").click(function(){
+			$search.val("").change();
+		});
+		$(".href-icon-forward").click(function(){
+			$($(this).data("href"))[0].scrollIntoView(true);
+			var _this=this;
+		}); 
+	}
+</script>
+    </div>
+</div>
+<!--<script type="text/javascript" src="" ></script>-->
+<script type="text/javascript" src="/viewSources/lib/jquery/jquery-1.12.4.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/bootstrap-3.3.7/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/jquery.easyui.min.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js" ></script>
+<script type="text/javascript" src="/viewSources/lib/angular-1.6.3/angular.min.js" ></script>
+
+</body>
+</html>
+
