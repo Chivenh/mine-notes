@@ -283,8 +283,8 @@ if($.fn.menu){
 				document.oncontextmenu=function(e){
 					e.preventDefault();
 					$('#body-right-menus').menu('show',{
-						top:e.clientY,
-						left:e.clientX
+						top:e.pageY,
+						left:e.pageX
 					});
 				};
 			}
@@ -295,8 +295,8 @@ if($.fn.menu){
 				target.contextmenu(function(e){
 					e.preventDefault();
 					$('#body-right-menus').menu('show',{
-						top:e.clientY,
-						left:e.clientX
+						top:e.pageY,
+						left:e.pageX
 					});
 				});
 			}
@@ -311,8 +311,8 @@ if($.fn.menu){
 				document.oncontextmenu=function(e){
 					e.preventDefault();
 					$(_this).menu('show',{
-						top:e.clientY,
-						left:e.clientX
+						top:e.pageY,
+						left:e.pageX
 					});
 				};
 			}
@@ -323,8 +323,8 @@ if($.fn.menu){
 				target.contextmenu(function(e){
 					e.preventDefault();
 					$(_this).menu('show',{
-						top:e.clientY,
-						left:e.clientX
+						top:e.pageY,
+						left:e.pageX
 					});
 				});
 			}

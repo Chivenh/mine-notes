@@ -10,28 +10,58 @@
 <link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap/bootstrap-responsive.min.css" />
 <link rel="stylesheet" type="text/css" href="/viewSources/lib/bootstrap-awesome/font-awesome-expand.css" />
 <link rel="stylesheet" type="text/css" href="/viewSources/lib/jquery-easyui-1.5/themes/bootstrap/easyui.css" />
-<title>Insert title here</title>
+<title>Angularjs</title>
 
 <style type="text/css">
 <!--
 
 -->
+#mine-ang input{
+	border:none;
+	border:1px solid skyblue;
+	border-radius: 4px;
+}
+
+#mine-ang input:focus{
+	box-shadow:0 0 4px 1px skyblue;
+}
+
+#mine-ang .ng-invalid-number{
+	box-shadow:0 0 4px 1px red;
+}
 #mine-ang .ltgt{
 	color: #8C8000;
 }
 #mine-ang .code-box{
 	background: #E5EECC;
 	border: #D4D4D4 1px solid;
-	padding:20px 5px;
-	height: 200px;
+	padding:20px 5px 0 5px;
+	height: 250px; 
+	position: relative;
 }
 #mine-ang .code-box>.code,#mine-ang .code-box>.example{
 	background: #fff;
 	border: #D4D4D4 1px solid;
 	border-radius: 4px;
-	min-height: calc(100% - 40px);
-	width:calc(50% - 2px);
+	 height: calc(100% - 40px); 
+	/* height:auto; */
+	width:calc(50% - 7px);
 	float: left;
+	padding-left:5px;
+	overflow: auto;
+}
+#mine-ang .code-box>.example .result::before{
+	content:"结果显示:";
+	color:#A6C43E;
+}
+#mine-ang .sub-dep{
+	width:0;height:0;
+	padding:2px 0;
+	background-color: #fff ,#D4D4D4;
+	display: block;
+}
+#mine-ang .imeMode{
+	ime-mode:disabled;
 }
 </style>
 </head>
@@ -40,35 +70,220 @@
 <div id="mine-ang" data-ng-app="mineAng" data-ng-controller="mineAngController">
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			Angular-表达式
+			Angular-学习随笔
 		</div>
-		<div class="panle-body">
-			<div class="code-box" data-ng-controller="mineAng01">
+		<div class="panle-body" style="height: 450px;">
+			<div style="height: 100%;">
+			<div class="code-box" style="height: 210px;">
 				<div class="code">
+					<span class="help-inline text-warning">简单表达式</span><br/>
 					<span class="ltgt">&lt;</span>
 						input type=&quot;text&quot; data-ng-model=&quot;name&quot;
-					<span>/&gt;</span>
+					<span class="ltgt">/&gt;</span>
+					<span class="ltgt">&lt;</span>i data-ng-show="!!user1.name" class="text-success glyphicon glyphicon-ok"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/i<span class="ltgt">&gt;</span>
+					<br/>
+					<span class="ltgt">&lt;</span>
+						input type=&quot;password&quot; data-ng-model=&quot;password&quot;
+					<span class="ltgt">/&gt;</span>
+					<span class="ltgt">&lt;</span>i data-ng-show="!!user1.password" class="text-success glyphicon glyphicon-ok"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/i<span class="ltgt">&gt;</span>
+					<br/>
+					<span class="ltgt">&lt;</span>span class="ltgt" data-ng-cloak <span class="ltgt">&gt;</span><span data-ng-non-bindable>$scope.user1:{{user1}}</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span>
+					<br/><span class="ltgt">&lt;</span>span class="ltgt" data-ng-cloak <span class="ltgt">&gt;</span><span data-ng-non-bindable>$scope.$parent.user:{{user}}</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span>
 				</div>
 				<div class="example">
-					<button class="btn btn-primary" data-toggle="modal" data-target="#mine-example-modal">查看示例</button>
+					<input type="text" data-ng-model="user1.name"/><i data-ng-show="!!user1.name" class="text-success glyphicon glyphicon-ok"></i><br/>
+					<input type="password" data-ng-model="user1.password"/><i data-ng-show="!!user1.password" class="text-success glyphicon glyphicon-ok"></i><br/>
+					<span class="ltgt result" data-ng-cloak>$scope.user1:{{user1}}</span><br/>
+					<span class="ltgt result" data-ng-cloak>$scope.$parent.user:{{user}}</span>
 				</div>
-			</div>
 			<span class="sub-dep" ></span>
+			<button class="btn btn-primary btn-xs" style="position: absolute;top:-3px;left:50%;" data-toggle="modal" data-target="#mine-example-modal">查看JS</button>
+			</div>
+			<div class="code-box" >
+				<div class="code" style="overflow: auto;">
+					<span class="help-inline text-warning">Angular-变量</span><br/>
+					<span class="ltgt">数字</span><span class="ltgt">&lt;</span>input type="number" class="imeMode" data-ng-model="number1" placeholder="数字1"/<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>input type="number" class="imeMode" data-ng-model="number2" placeholder="数字2"/<span class="ltgt">&gt;</span>
+					<br/><span class="ltgt">&lt;</span>span class="ltgt result" data-ng-bind="'求和:' + toNum(number1 + number2)"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span>
+					<br/>
+					<span class="ltgt">字符串</span><span class="ltgt">&lt;</span>input type="text" data-ng-model="str1" placeholder="字符串1"/<span class="ltgt">&gt;</span>+<span class="ltgt">&lt;</span>input type="text" data-ng-model="str2" placeholder="字符串2"/<span class="ltgt">&gt;</span>
+					<br/><span class="ltgt"></span><span class="ltgt">&lt;</span>span class="ltgt" data-ng-bind="'合并: ' + str1 + str2"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span>
+				<br/>	<span class="ltgt" >数组</span>
+					<span class="ltgt">&lt;</span>input type="text" data-ng-model="arg1" size="5"/<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>input type="text" size="5" data-ng-model="arg2"/<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>input type="text" size="5" data-ng-model="arg3"/<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>input type="text" size="5" data-ng-model="arg4"/<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>output class="ltgt" data-ng-bind="'数组:' + getArg()" <span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/output<span class="ltgt">&gt;</span>	
+				</div>
+				<div class="example">
+					<span class="ltgt">数字<i class="text-warning glyphicon glyphicon-arrow-right"></i></span><input type="number" step="0.01"   class="imeMode" data-ng-model="number1" placeholder="数字1"/>+<input type="number" step="0.01" class="imeMode" data-ng-model="number2" placeholder="数字2"/>
+					<br/><span class="ltgt"></span><span class="ltgt" data-ng-bind="'求和:' + toNum(number1 + number2)"></span>
+					<br/>
+					<span class="ltgt">字符串<i class="text-warning glyphicon glyphicon-arrow-right"></i></span><input type="text" data-ng-model="str1" placeholder="字符串1"/>+<input type="text" data-ng-model="str2" placeholder="字符串2"/>
+					<br/><span class="ltgt"></span><span class="ltgt" data-ng-bind="'合并: ' + str1 + str2"></span>
+					<br/> <span class="ltgt" >数组</span>
+					<input type="text" data-ng-model="arg1" size="5"/><input type="text" size="5" data-ng-model="arg2"/><input type="text" size="5" data-ng-model="arg3"/><input type="text" size="5" data-ng-model="arg4"/>
+					<output class="ltgt" data-ng-bind="'数组:' + getArg()" ></output>	
+				</div>
+			<span class="sub-dep" ></span>
+			<button class="btn btn-primary btn-xs" style="position: absolute;top:-3px;left:50%;" data-toggle="modal" data-target="#mine-example-modal">查看JS</button>
+			</div>
+			<div class="code-box" style="height:170px;">
+				<div class="code">
+					<span class="help-inline text-warning">Angular-select</span><br/>
+					<span class="ltgt">下拉列表(ng-options)</span><br/>
+					<span class="ltgt">&lt;</span>select data-ng-init="selectData=datas[0]" data-ng-model="selectData" data-ng-options="x.name for x in datas"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/select<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>select data-ng-init="selectData2=datas[0]" data-ng-model="selectData2" data-ng-options="x.age for x in datas"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/select<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>span class="ltgt result" data-ng-bind="selectData"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>span class="ltgt result" data-ng-bind="selectData2.desc"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span>
+					</div>
+				<div class="example">
+					<span class="ltgt">下拉列表</span><br/>
+					<select data-ng-init="selectData=datas[0]" data-ng-model="selectData" data-ng-options="x.name for x in datas"></select>
+					<select data-ng-init="selectData2=datas[0]" data-ng-model="selectData2" data-ng-options="x.age for x in datas"></select><br/>
+					<span class="ltgt result" data-ng-bind="selectData"></span>
+					<span class="ltgt result" data-ng-bind="selectData2.desc"></span>
+				</div>
+			<span class="sub-dep" ></span>
+			<button class="btn btn-primary btn-xs" style="position: absolute;top:-3px;left:50%;" data-toggle="modal" data-target="#mine-example-modal">查看JS</button>
+			</div>
+			<div class="code-box" style="height: 200px;">
+				<div class="text-primary " style="position: absolute;top:-2px;">Angular-Filter-1</div>
+				<div class="code">
+					<span class="ltgt">currency(数字转换成货币格式),uppercase(字符串转大写),lowercase(字符串转小写)</span><br/>
+					<span class="ltgt">&lt;</span>input placeholder="数字-货币" type="number" data-ng-model="angFilter.num1" step="0.01" style="width:100px;"/<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>input placeholder="字符串-大写" type="text" data-ng-model="angFilter.str1" class="imeMode" style="width:100px;"/<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>input placeholder="字符串-小写" type="text" data-ng-model="angFilter.str2" class="imeMode" style="width:100px;"/<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>span class="ltgt result" data-ng-bind="angFilter.num1 | currency" style="width:100px;"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>span class="ltgt result" data-ng-bind="angFilter.str1 | uppercase" style="width:100px;"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>span class="ltgt result" data-ng-bind="angFilter.str2 | lowercase" style="width:100px;"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span>
+				</div>
+				<div class="example" >
+					<span class="ltgt">currency(数字转换成货币格式),uppercase(字符串转大写),lowercase(字符串转小写)</span><br/>
+					<input placeholder="数字-货币" type="number" data-ng-model="angFilter.num1" step="0.01" style="width:100px;"/>
+					<input placeholder="字符串-大写" type="text" data-ng-model="angFilter.str1" class="imeMode" style="width:100px;"/>
+					<input placeholder="字符串-小写" type="text" data-ng-model="angFilter.str2" class="imeMode" style="width:100px;"/><br/>
+					<span class="ltgt result" data-ng-bind="angFilter.num1 | currency" style="width:100px;"></span>
+					<span class="ltgt result" data-ng-bind="angFilter.str1 | uppercase" style="width:100px;"></span>
+					<span class="ltgt result" data-ng-bind="angFilter.str2 | lowercase" style="width:100px;"></span>
+				</div>
+			<span class="sub-dep" ></span>
+			 <button class="btn btn-primary btn-xs" style="position: absolute;top:-3px;left:50%;" data-toggle="modal" data-target="#mine-example-modal">查看JS</button>
+			</div>
+			<div class="code-box" >
+				<div class="text-primary " style="position: absolute;top:-2px;">Angular-Filter-2</div>
+				<div class="code">
+					<span class="help-inline text-warning">orderBy 排序.</span><br/>
+					<span>数组:['text','textarea','passwrod','number','date']</span><br/>
+					<span class="ltgt">&lt;</span>div<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>ul style="list-style:square;float: left;border-right: 1px solid blue;padding-right:2px;"<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>li data-ng-repeat="x in orderArgs | orderBy:true"<span class="ltgt">&gt;</span>{{x}}<span class="ltgt">&lt;</span>/li<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>/ul<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>ul style="list-style:square;float: left;border-left: 1px solid blue;"<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>li data-ng-repeat="x in orderArgs | orderBy:'-'"<span class="ltgt">&gt;</span>{{x}}<span class="ltgt">&lt;</span>/li<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>/ul<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>/div<span class="ltgt">&gt;</span><br/>
+				</div>
+				<div class="example">
+					<span class="ltgt">orderBy排序</span><br/>
+					<span>数组:['text','textarea','passwrod','number','date']</span>
+					<div>
+					<ul style="list-style:square;float: left;border-right: 1px solid lightblue;padding-right:2px;">
+					<li style="list-style: none;">1.正序</li>
+					<li data-ng-repeat="x in angOrder.args | orderBy:true" data-ng-bind="x"></li>
+					</ul>
+					<ul style="list-style:square;float: left;border-left: 1px solid lightblue;">
+					<li style="list-style:none; ">2.倒序</li>
+					<li data-ng-repeat="x in angOrder.args | orderBy:'-'" data-ng-bind="x"></li>
+					</ul>
+					</div>
+					<div style="clear:both;">对象集合:</div>
+					<div>
+							<div style="list-style: none;">orderBy:'name'</div>
+						<ul style="list-style:decimal;  border-left: 1px solid lightblue;">
+							<li data-ng-bind="x" data-ng-repeat="x in angOrder.list | orderBy:'-name'"></li>
+						</ul>
+						<div style="list-style: none;">orderBy:'age'</div>
+						<ul style="list-style:decimal;  border-left: 1px solid lightblue;">
+							<li data-ng-bind="x" data-ng-repeat="x in angOrder.list | orderBy:'age'"></li>
+						</ul>
+						<div style="list-style: none;">orderBy:'desc'</div>
+						<ul style="list-style:decimal;  border-left: 1px solid lightblue;">
+							<li data-ng-bind="x" data-ng-repeat="x in angOrder.list | orderBy:'-desc'"></li>
+						</ul>
+					</div>
+				</div>
+			<span class="sub-dep" ></span>
+			 <button class="btn btn-primary btn-xs" style="position: absolute;top:-3px;left:50%;" data-toggle="modal" data-target="#mine-example-modal">查看JS</button>
+			</div>
+			<div class="code-box" >
+				<div class="text-primary " style="position: absolute;top:-2px;">Angular-Filter-3</div>
+				<div class="code" >
+					<span class="help-inline text-warning">filter (查找过滤)</span><br/>
+					<span class="ltgt">&lt;</span>input type="text" data-ng-model="angFilterStr" placeholder="按desc过滤"/<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>ul style="list-style: decimal;"<span class="ltgt">&gt;</span><br/>
+						<span class="ltgt">&lt;</span>li data-ng-repeat="x in angOrder.list | filter:{'desc':angFilterStr} | orderBy:'age'" data-ng-bind="x"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/li<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>/ul<span class="ltgt">&gt;</span><br/>
+					<span class="help-inline text-warning">自定义过滤器</span><br/>
+					<span class="ltgt">&lt;</span>select data-ng-init="angOrder.filterTarget1='desc'" data-ng-model="angOrder.filterTarget1" data-ng-options="x for x in angOrder.filterTargets" <span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/select<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>input type="text" data-ng-model="angOrder.angFilterStr1" placeholder="按<span data-ng-non-bindable>{{angOrder.filterTarget1}}</span>过滤"/<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>ul style="list-style: decimal;" <span class="ltgt">&gt;</span>
+						<span class="ltgt">&lt;</span>li data-ng-repeat="x in angOrder.list | objOrder:angOrder.filterTarget1: angOrder.angFilterStr1| orderBy:'age'" data-ng-bind="x"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/li<span class="ltgt">&gt;</span>
+					<span class="ltgt">&lt;</span>/ul<span class="ltgt">&gt;</span>
+				</div>
+				<div class="example">
+					<div style="float: left;"><span class="ltgt">filter 过滤</span><br/>
+					<input type="text" data-ng-model="angOrder.angFilterStr" placeholder="按desc过滤"/>
+					<ul style="list-style: decimal;" >
+						<li data-ng-repeat="x in angOrder.list | filter:{'desc': angOrder.angFilterStr}| orderBy:'age'" data-ng-bind="x"></li>
+					</ul></div>
+					<div style="float: left;">
+					<span class="ltgt">自定义过滤器 </span><br/>
+					<select data-ng-init="angOrder.filterTarget1='desc'" data-ng-model="angOrder.filterTarget1" data-ng-options="x for x in angOrder.filterTargets" ></select>
+					<input type="text" data-ng-model="angOrder.angFilterStr1" placeholder="按{{angOrder.filterTarget1}}过滤"/>
+					<ul style="list-style: decimal;" >
+						<li data-ng-repeat="x in angOrder.list | objOrder:angOrder.filterTarget1: angOrder.angFilterStr1| orderBy:'age'" data-ng-bind="x"></li>
+					</ul></div>
+				</div>
+				<span class="sub-dep" ></span>
+			 <button class="btn btn-primary btn-xs" style="position: absolute;top:-3px;left:50%;" data-toggle="modal" data-target="#mine-example-modal">查看JS</button>
+			</div>
+			<div class="code-box" >
+				<div class="code">
+					<span class="help-inline text-warning">自定义指令</span><br/>
+					<br/>
+					<span class="ltgt">&lt;</span>i class="badge "<span class="ltgt">&gt;</span>1<span class="ltgt">&lt;</span>/i<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>span data-mn-button-toggle  btn="{text:'按钮1',dtext:'加载中...',time:'2000',type:'primary',size:'sm'}"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/span<span class="ltgt">&gt;</span><br/>
+					<span class="ltgt">&lt;</span>mn-button-toggle  btn="{text:'按钮23',dtext:'提交中...',time:'5000',type:'warning',size:'lg'}"<span class="ltgt">&gt;</span><span class="ltgt">&lt;</span>/mn-button-toggle<span class="ltgt">&gt;</span>
+				</div>
+				<div class="example">
+					<br/>
+					<i class="badge ">1</i>
+					<span data-mn-button-toggle  btn="{text:'按钮1',dtext:'加载中...',time:'2000',type:'primary',size:'sm'}"></span>
+					<mn-button-toggle  btn="{text:'按钮23',dtext:'提交中...',time:'5000',type:'warning',size:'lg'}"></mn-button-toggle>
+					</div>
+				<span class="sub-dep" ></span>
+				 <button class="btn btn-primary btn-xs" style="position: absolute;top:-3px;left:50%;" data-toggle="modal" data-target="#mine-example-modal">查看JS</button>
+			</div>
+			
+			
+			</div>
 		</div>
 	</div>
+	<!-- 模态框 -->
+	<!-- <button class="btn btn-primary" data-toggle="modal" data-target="#mine-example-modal">查看示例</button> -->
 	<div class="modal fade" id="mine-example-modal" tabindex="-1" role="dialog" aria-labelledby="mine-example-modal-label">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="mine-example-modal-label">Modal title</h4>
+		        <h4 class="modal-title" id="mine-example-modal-label">当前Angular-JS</h4>
 		      </div>
 		      <div class="modal-body">
-		        ...
+		      	<pre>
+
+		      	</pre>
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary">Save changes</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 		      </div>
 		    </div>
 		  </div>
@@ -79,20 +294,123 @@
 <script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/jquery.easyui.min.js" ></script>
 <script type="text/javascript" src="/viewSources/lib/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js" ></script>
 <script type="text/javascript" src="/viewSources/lib/angular-1.6.3/angular.min.js" ></script>
-<script type="text/javascript">
-<!--
-
-//-->
-$(function() {
-	$().rightMenu();
-});
+<script type="text/javascript" id="mineAng-js">
 (function(w,$j){
-	var mineAng=angular.module("mineAng",[]).controller("mineAngController",function($scope,$timeout){
-		console.info($scope);
-	}).controller("mineAng01",function($scope,$timeout){
-		console.info($scope);
+var parseAttrToObj=function(attr){
+	return angular.fromJson(attr.replace(new RegExp("\'","ig"),"\""));
+};
+var mineAng=angular.module("mineAng",[])
+.controller("mineAngController",function($scope,$timeout){
+	$().rightMenu();
+	angular.extend($scope,{
+		user:{name:"admin",password:"123"},
+		toNum:function(num){
+		return (Number(num)===Number(num))?Number(num).toFixed(2):0;
+		},getArg:function(){
+			var arg=[];
+			arg.push(this.arg1);
+			arg.push(this.arg2);
+			arg.push(this.arg3);
+			arg.push(this.arg4);
+			return arg;
+		},datas:[
+			{name:"Ang1",age:20,desc:"成年"},
+			{name:"Ang2",age:15,desc:"未成年"},
+			{name:"Ang3",age:50,desc:"老年"},
+		],angFilter:{
+			num1:12.21,
+			str1:"aed",
+			str2:"BEF"
+		},angOrder:{
+			args:[
+			'text','textarea','passwrod','number','date'
+			],
+			list:[
+			{name:"杨林",age:50,desc:"杨老头"},
+			{name:"胡椒",age:30,desc:"胡花"},
+			{name:"花休",age:18,desc:"花小妹"},
+			{name:"梅尚",age:26,desc:"梅娘"},
+			{name:"海封",age:23,desc:"海花子"},
+			],filterTargets: ['name','age','desc']
+		}
 	});
+}).filter("objOrder",function(){//自定义查找过滤器
+	return function(obj,arg1,arg2){
+		arg2=arg2||"";
+		return obj.filter(function(elm){
+			return ((elm[arg1]+"").indexOf(arg2)>-1);
+		});
+	};
+}).directive("mnButtonToggle",function(){
+	//必需的btn属性中键名必须为纯字母.
+	return {
+			/*
+	//restrice属性 说明此指令可以使用的方式:
+    E 作为元素名使用
+    A 作为属性使用
+    C 作为类名使用
+    M 作为注释使用*/
+		restrict:"AE",
+		//replace此属性表明下面的template模板将替换原来的元素.
+		//设置为false,则template的模板内容将置于原元素内.
+		replace:true,
+		//对元素的处理.即将此指令对应的元素展示如下:
+		template:"<button type='button' "+
+		"data-ng-disabled='$d' data-ng-click='toggle()' "+
+		"  class='btn btn-{{type}} btn-{{size}}'>{{text}}</button>",
+		//scope默认为false,即使用父级作用域.
+		//scope设置true,表明继承父级作用域,创建自己的作用域.
+		//scope 设置为{} 则创建一个独立的作用域,不能访问父级作用域.
+		//在scope:{}中@符号是将使用此指令的元素中属性或数据绑定到此作用域.
+		scope:{},
+		//有自己的scope时,定义自己的controller.
+		controller:function($scope, $element, $attrs,$timeout){
+			console.info($scope);
+			//默认值.
+			$scope.type="primary";
+			$scope.size="sm";
+			var btn=$attrs.btn;
+			if(btn){
+				//将btn属性中的多余空格,单引号换成双引号
+				//先转成json字符串,以便于转换成对象.
+				btn=btn.replace(/(?:\b)\s+(?:\b)/gi,"")
+				.replace(/(\w+)(\b:)/gi,"\"$1\"$2")
+				.replace(/'/gi,"\"");
+				//将btn属性值转为对象.
+				btn=angular.fromJson(btn);
+			}else{
+				btn={text:"按钮",dtext:"进行中...",$d:false};
+			}
+			angular.extend($scope,btn,{
+				$d:false,
+				toggle:function(fc,param){
+					//console.info(arguments);
+					//console.info(this.$parent);
+					var _t=this;
+					var text=this.text;
+					this.text=this.dtext;
+					this.$d=true;
+					$timeout(function(){
+						_t.text=text;
+						_t.$d=false;
+					},this.time||3000);
+				}
+			});
+			//console.info($scope);
+		}
+	};
+});
 }(window,jQuery));
+</script>
+<script type="text/javascript">
+$(function() {
+	$("#mine-example-modal").on("show.bs.modal",function(e){
+		var text=$("#mineAng-js").text();
+		var reg=/((.*\n)*.*\(w,\$j\)\{\n)|(\}\(window,jQuery.*)/igm;//((.*\n)+),截取真正需要的展示的内容,将前后部分置为空.
+	//	console.info(reg,text,text.match(reg),reg.exec(text));
+		$("#mine-example-modal .modal-body>pre").text(text.replace(reg,''));
+	});
+});
 </script>
 </body>
 </html>
